@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
+export (NodePath) var CameraPath
+onready var _camera: Camera2D = get_node(CameraPath)
 
 var velocity = Vector2()
 
@@ -18,6 +20,7 @@ func get_input():
 
 	look_at(get_global_mouse_position())
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	_camera.move_camera(self.position)
