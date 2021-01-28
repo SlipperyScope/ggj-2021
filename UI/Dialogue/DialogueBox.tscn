@@ -11,6 +11,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+TextSpeed = null
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 1920.0
