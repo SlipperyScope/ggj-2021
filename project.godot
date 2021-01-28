@@ -21,8 +21,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Ggj- 2021"
-run/main_scene="res://Dev Folders/Andrew/Andrew.tscn"
+run/main_scene="res://Game/Init.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+GameData="*res://Game/GameData.gd"
+PlayerData="*res://Game/PlayerData.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [gdnative]
 
