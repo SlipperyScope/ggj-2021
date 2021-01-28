@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Dialogue/DialogueBox.gd" type="Script" id=1]
+[ext_resource path="res://Dev Folders/Andrew/AndrewTheme.tres" type="Theme" id=2]
+
+[node name="DialogueBox" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_left = 58.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/HBoxContainer"]
+margin_bottom = 1080.0
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer"]
+margin_left = 4.0
+margin_right = 840.0
+margin_bottom = 1080.0
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "This is some example dialogue"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
