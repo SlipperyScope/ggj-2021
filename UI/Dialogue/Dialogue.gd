@@ -32,7 +32,7 @@ func GetPreviousBlurb() -> Blurb:
 func _UpdateBlurbEnds():
 	IsLastBlurb = false
 	IsFirstBlurb = false
-	if CurrentIndex == _Blurbs.size():
+	if CurrentIndex == _Blurbs.size() - 1:
 		IsLastBlurb = true
 	if CurrentIndex == 0:
 		IsFirstBlurb = true

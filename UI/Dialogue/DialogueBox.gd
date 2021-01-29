@@ -1,5 +1,6 @@
 extends Control
 
+signal DialogueFinished
 
 onready var _Printer = $TextPrinter
 onready var _AudioPlayer = $AudioPlayer
@@ -35,7 +36,7 @@ func _AudioStarted():
 	_Audioing = true
 
 func _AudioFinished():
-	_Audioing = true
+	_Audioing = false
 
 func _PrintStarted():
 	_Printing = true
@@ -47,11 +48,11 @@ func _PreviousBlurb():
 	pass
 
 func _NextBlurb():
+	_TextBox.text = ""
 	if _Dialogue.IsLastBlurb:
-		# disable navup
-		# skip ends dialogue
-		pass
-
+		emit_signal("DialogueFinished")
+		return
+	
 	var blurb = _Dialogue.GetNextBlurb()
 	_CurrentBlurb = blurb
 	_AudioPlayer.stream = blurb.BlurbAudio
@@ -65,8 +66,11 @@ func _PlayBlurb():
 	_AudioStarted()
 
 func _Skip():
-	_Printer.Skip()
-	_AudioPlayer.stop()
+	if _Printing or _Audioing:
+		_Printer.Skip()
+		_AudioPlayer.stop()
+	else:
+		_NextBlurb()
 
 func _CalculateSpeed(audio: AudioStreamSample, text: String):
-	return text.length() / audio.get_length() - 1
+	return text.length() / audio.get_length() - 0.5

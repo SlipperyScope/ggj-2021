@@ -35,7 +35,7 @@ func Start(from: int = 0):
 
 func Skip():
 	_PrintTimer.stop()
-	_CurrentIndex = Message.count() - 1
+	_CurrentIndex = Message.length() - 1
 	_Textbox.text = Message
 	emit_signal("PrintComplete")
 
