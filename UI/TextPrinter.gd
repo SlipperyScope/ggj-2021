@@ -8,8 +8,6 @@ signal PrintProgress
 # Text box to use
 onready var _Textbox: Label = get_node("../../Label")
 
-var Derpbox: Label
-
 # Characters per second to print
 export var PrintSpeed = 20.0
 

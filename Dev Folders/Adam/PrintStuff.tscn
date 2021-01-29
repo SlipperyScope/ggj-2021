@@ -41,4 +41,3 @@ PrintSpeed = 40.0
 Message = "Wow hello omg like hi wow this is so... um yeah like haha okay no but srsly xD xD xD lololol!!!11 jk haha"
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
-[connection signal="input_event" from="DialogTrigger/Area2D" to="DialogTrigger" method="_on_Area2D_input_event"]
