@@ -1,18 +1,12 @@
 extends Camera2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():	
-	set_as_toplevel(true)
-
 func move_camera(position):
-	print("move " + str(position.x) + ", " + str(position.y))
-	self.position = position
+	var newPos = self.position
+	if position.x - 100 > self.position.x: newPos.x = position.x - 100
+	if position.x + 100 < self.position.x: newPos.x = position.x + 100
+	if position.y - 50 > self.position.y: newPos.y = position.y - 50
+	if position.y + 50 < self.position.y: newPos.y = position.y + 50
+	self.position = newPos
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

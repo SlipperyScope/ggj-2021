@@ -6,6 +6,9 @@ onready var _camera: Camera2D = get_node(CameraPath)
 
 var velocity = Vector2()
 
+func _ready():
+	_camera.position = self.position
+
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed('p_right'):
