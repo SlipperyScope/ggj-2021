@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://UI/TextPrinter.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/DevArt/Beefcake2021.png" type="Texture" id=4]
+[ext_resource path="res://UI/PrintStuff.gd" type="Script" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.7268, 31.8755 )
+
+[node name="PrintStuff" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 168.472, 353.938 )
+scale = Vector2( 0.172979, 0.172979 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2( 66.6531, 66.6531 )
+shape = SubResource( 1 )
+
+[node name="DialogTrigger" type="Sprite" parent="."]
+visible = false
+position = Vector2( 209.526, 308.788 )
+scale = Vector2( 0.336807, 0.336807 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="DialogTrigger"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Printer" type="Node" parent="."]
+script = ExtResource( 1 )
+PrintSpeed = 40.0
+Message = "Wow hello omg like hi wow this is so... um yeah like haha okay no but srsly xD xD xD lololol!!!11 jk haha"
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="input_event" from="DialogTrigger/Area2D" to="DialogTrigger" method="_on_Area2D_input_event"]

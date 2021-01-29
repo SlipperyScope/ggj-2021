@@ -6,8 +6,9 @@ signal PrintComplete
 signal PrintProgress
 
 # Text box to use
-export (NodePath) var TextBoxPath
-onready var _Textbox: Label = get_node(TextBoxPath)
+onready var _Textbox: Label = get_node("../../Label")
+
+var Derpbox: Label
 
 # Characters per second to print
 export var PrintSpeed = 20.0
