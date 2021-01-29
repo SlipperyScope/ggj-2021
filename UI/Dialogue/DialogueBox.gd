@@ -44,12 +44,16 @@ func _AudioStarted():
 
 func _AudioFinished():
 	_Audioing = false
+	if _Printing == false and _CurrentBlurb.Played == false:
+		_CurrentBlurb.Played = true
 
 func _PrintStarted():
 	_Printing = true
 
 func _PrintComplete():
 	_Printing = false
+	if _Audioing == false and _CurrentBlurb.Played == false:
+		_CurrentBlurb.Played = true
 
 func _PreviousBlurb():
 	_TextBox.text = ""
@@ -66,13 +70,9 @@ func _NextBlurb():
 	_ChangeBlurb(_Dialogue.GetNextBlurb())
 
 func _ChangeBlurb(blurb):
-	if _CurrentBlurb != null && _CurrentBlurb != null:
-		_CurrentBlurb.Played = true
-
 	_CurrentBlurb = blurb
 	_AudioPlayer.stream = blurb.BlurbAudio
-
-	_Printer.Configure(blurb.BlurbText, _CalculateSpeed(blurb.BlurbAudio, blurb.BlurbText))
+	_Printer.Configure(blurb.BlurbText, _CalculateSpeed(blurb))
 	_Portrait.texture = blurb.FaceTexture
 	_UpdateButtons()
 
@@ -103,7 +103,7 @@ func _Skip():
 
 func _UpdateButtons():
 	_NavDown.disabled = _Dialogue.IsLastBlurb || !_CurrentBlurb.Played
-	_NavUp.disabled = _Dialogue.IsFirstBlurb || _CurrentBlurb.Played
+	_NavUp.disabled = _Dialogue.IsFirstBlurb
 
-func _CalculateSpeed(audio: AudioStreamSample, text: String):
-	return text.length() / (audio.get_length() - 1)
+func _CalculateSpeed(blurb):
+	return blurb.BlurbText.length() / (blurb.BlurbAudio.get_length() - 1)
