@@ -256,7 +256,7 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="StaticBody2D"]
 scale = Vector2( 0.0509808, 0.0509808 )
 frames = SubResource( 40 )
-frame = 35
+frame = 27
 playing = true
 [connection signal="body_entered" from="Area2D" to="hud" method="_on_beefcake_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_beefcake_body_entered"]
