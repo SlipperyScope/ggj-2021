@@ -1,13 +1,72 @@
 extends Control
 
-# Characters per second to feed out
-export var TextSpeed = 25
-export var DialogueText = "This is a sample of some dialogue"
 
-onready var TextBox = $Panel/HBoxContainer/Label
+onready var _Printer = $TextPrinter
+onready var _AudioPlayer = $AudioPlayer
+onready var _Portrait = $Portrait
+onready var _TextBox = $HBoxContainer/MarginContainer/BlurbDisplay/Blurb
+onready var _NavUp = $HBoxContainer/MarginContainer/BlurbDisplay/Buttons/Navigate/NavUp
+onready var _NavDown = $HBoxContainer/MarginContainer/BlurbDisplay/Buttons/Navigate/NavDown
+onready var _Play = $HBoxContainer/MarginContainer/BlurbDisplay/Buttons/Play
+onready var _Next = $HBoxContainer/MarginContainer/BlurbDisplay/Buttons/Next
+
+var _Dialogue: Dialogue
+var _CurrentBlurb: Blurb
+var _Printing = false
+var _Audioing = false
 
 func _ready():
-    TextBox.text = ""
-    
-func PrintText():
-    pass
+	call_deferred("_SetupListeners")
+
+func _SetupListeners():
+	_NavUp.connect("pressed", self, "_PreviousBlurb")
+	_NavDown.connect("pressed", self, "_NextBlurb")
+	_Play.connect("pressed", self, "_PlayBlurb")
+	_Next.connect("pressed", self, "_Skip")
+	_Printer.connect("PrintComplete", self, "_PrintComplete")
+	_Printer.connect("PrintStarted", self, "_PrintStarted")
+	_AudioPlayer.connect("finished", self, "_AudioFinished")
+
+func StartDialogue(dialogue: Dialogue):
+	_Dialogue = dialogue
+	_NextBlurb()
+
+func _AudioStarted():
+	_Audioing = true
+
+func _AudioFinished():
+	_Audioing = true
+
+func _PrintStarted():
+	_Printing = true
+
+func _PrintComplete():
+	_Printing = false
+
+func _PreviousBlurb():
+	pass
+
+func _NextBlurb():
+	if _Dialogue.IsLastBlurb:
+		# disable navup
+		# skip ends dialogue
+		pass
+
+	var blurb = _Dialogue.GetNextBlurb()
+	_CurrentBlurb = blurb
+	_AudioPlayer.stream = blurb.BlurbAudio
+	_Printer.Configure(blurb.BlurbText, _CalculateSpeed(blurb.BlurbAudio, blurb.BlurbText))
+	_Portrait.texture = blurb.FaceTexture
+	_PlayBlurb()
+	_Printer.Start()
+
+func _PlayBlurb():
+	_AudioPlayer.play()
+	_AudioStarted()
+
+func _Skip():
+	_Printer.Skip()
+	_AudioPlayer.stop()
+
+func _CalculateSpeed(audio: AudioStreamSample, text: String):
+	return text.length() / audio.get_length() - 1

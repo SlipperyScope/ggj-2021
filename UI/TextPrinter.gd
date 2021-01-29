@@ -4,9 +4,11 @@ class_name TextPrinter
 signal PrintStarted
 signal PrintComplete
 signal PrintProgress
+signal PrinterReset
 
 # Text box to use
-onready var _Textbox: Label = get_node("../../Label")
+export (NodePath) var TextBoxPath
+onready var _Textbox: RichTextLabel = get_node(TextBoxPath)
 
 # Characters per second to print
 export var PrintSpeed = 20.0
@@ -15,12 +17,14 @@ export var PrintSpeed = 20.0
 export var Message = ""
 
 var _PrintTimer: Timer
-var _CurrentIndex = 0
+var _CurrentIndex = -1
 
 func _init():
 	_MakeTimer()
 
-
+func Configure(message, speed):
+	Message = message
+	PrintSpeed = speed
 
 func Start(from: int = 0):
 	_CurrentIndex = from
@@ -29,8 +33,18 @@ func Start(from: int = 0):
 	_PrintTimer.start(1.0 / PrintSpeed)
 	pass
 
-func Clear():
-	_Textbox.text = ""
+func Skip():
+	_PrintTimer.stop()
+	_CurrentIndex = Message.count() - 1
+	_Textbox.text = Message
+	emit_signal("PrintComplete")
+
+func Reset():
+	_PrintTimer.stop()
+	_CurrentIndex = -1
+	Message = ""
+	PrintSpeed = 20.0
+	emit_signal("PrinterReset")
 
 func _PrintNext(finish := true):
 	if _CurrentIndex < Message.length():

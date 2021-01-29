@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Blurb",
+"language": "GDScript",
+"path": "res://UI/Dialogue/Blurb.gd"
+}, {
+"base": "Node",
+"class": "Dialogue",
+"language": "GDScript",
+"path": "res://UI/Dialogue/Dialogue.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
@@ -20,6 +30,8 @@ _global_script_classes=[ {
 "path": "res://UI/TextPrinter.gd"
 } ]
 _global_script_class_icons={
+"Blurb": "",
+"Dialogue": "",
 "GitAPI": "",
 "TextPrinter": ""
 }

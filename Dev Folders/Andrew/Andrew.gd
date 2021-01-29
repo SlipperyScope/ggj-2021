@@ -1,10 +1,9 @@
 extends Node2D
 
-onready var Printer = $Printer
+onready var DialogueBox = $DialogueBox
 
 func _ready():
 	$DialogTrigger.connect("TriggerDialogue", self, "_StartDialogue")
 
 func _StartDialogue():
-	Printer.Clear()
-	Printer.Start()
+	DialogueBox.StartDialogue($Dialogue)
