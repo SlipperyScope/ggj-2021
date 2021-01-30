@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="level1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -210.099, 13.7911 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -3281.5, -2970.2 )
+
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2188.13, -3461.79 )
+
+[node name="Blurb" parent="NPC/Dialogue" index="0"]
+BlurbAudio = ExtResource( 4 )
+BlurbText = "Talking"
+
+[editable path="NPC"]
