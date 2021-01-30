@@ -32,7 +32,7 @@ func _physics_process(_delta):
 		if velocity.length() > 0 : 
 			Steve.animation = "walk"
 			if velocity.x < 0: Steve.flip_h = true
-			else: Steve.flip_h = false
+			elif velocity.x > 0: Steve.flip_h = false
 		else: Steve.animation = "idle"
 
 func _process(_delta):

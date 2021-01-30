@@ -79,7 +79,7 @@ position = Vector2( -1864.68, -3147.71 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="4"]
-frame = 15
+frame = 8
 
 [node name="HUD" parent="Player" index="6"]
 _InventoryPath = NodePath("../Inventory")
