@@ -59,8 +59,7 @@ animations = [ {
 } ]
 
 [node name="Steve" type="AnimatedSprite"]
-position = Vector2( 1013.2, 261.626 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 20
+frame = 4
 playing = true
