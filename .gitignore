@@ -5,3 +5,6 @@
 bin/
 build/
 lib/
+
+# Ugh, flash pls
+Assets/Art/Animations/RECOVER_Animations.fla
