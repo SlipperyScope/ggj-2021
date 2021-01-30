@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://PlayerScripts/Movement.gd" type="Script" id=1]
-[ext_resource path="res://Dev Folders/Adam/PrintStuff.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Dev Folders/Andrew/AndrewTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Assets/DevArt/Character.png" type="Texture" id=5]
-[ext_resource path="res://Assets/DevArt/Beefcake2021.png" type="Texture" id=6]
-[ext_resource path="res://PlayerScripts/Hud.gd" type="Script" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Label
@@ -27,20 +25,9 @@ func _ready():
 "
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 75.4247, 75.919 )
+extents = Vector2( 212.067, 217.134 )
 
 [node name="Node2D" type="Node2D"]
-
-[node name="hud" type="Node2D" parent="."]
-position = Vector2( 514.318, 304.781 )
-scale = Vector2( 16.5799, 9.37179 )
-script = ExtResource( 8 )
-
-[node name="BeefSprite" type="Sprite" parent="hud"]
-visible = false
-position = Vector2( -27.6074, 28.6172 )
-scale = Vector2( 0.00535661, 0.00535661 )
-texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -35.0502
@@ -56,32 +43,26 @@ __meta__ = {
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 536, 265 )
-scale = Vector2( 0.406007, 0.406007 )
+position = Vector2( -4098.23, -3103.65 )
+scale = Vector2( 0.2, 0.4 )
+z_index = 1
 script = ExtResource( 1 )
+speed = 1000
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="Sprite" type="Sprite" parent="Player"]
 rotation = 1.5708
+scale = Vector2( 2.92748, 2.92748 )
+z_index = 1
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 1.83316, 0.164581 )
-scale = Vector2( 1, 1.02236 )
+position = Vector2( 1.83316, 152.665 )
+scale = Vector2( 1, 0.32236 )
 shape = SubResource( 2 )
 
-[node name="PrintStuff" parent="." instance=ExtResource( 2 )]
-position = Vector2( -69.4016, -79.2002 )
-
-[node name="PrintStuff2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 703.725, -77.7019 )
-ForceStart = true
-
-[node name="Printer" parent="PrintStuff2" index="2"]
-Message = "Interrupting cow says mooooooooooooo"
-
-[editable path="PrintStuff"]
-
-[editable path="PrintStuff2"]
+[node name="level1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 0 )
