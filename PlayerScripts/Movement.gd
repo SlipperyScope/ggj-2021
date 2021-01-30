@@ -39,8 +39,7 @@ func _process(_delta):
 	if (!DialogueBoxWorking && Interactor):
 		if Input.is_action_pressed('ui_accept'):
 			if Interactor.has_node("Dialogue"): _start_dialogue()
-			elif Interactor.has_node("Item"): _add_item()
-			#if dialogue else if item->Inventory.AddItem() else if....
+			elif Interactor.has_node("Inventory"): _add_items()
 
 func _on_Area2D_area_entered(_area):
 	Interactor = _area.get_node("../")
@@ -63,7 +62,10 @@ func _start_dialogue():
 func _print_finished():
 	DialogueBoxWorking = false
 
-func _add_item():
-	_Inventory.AddItem(Interactor.get_node("Item"))
-	Interactor.queue_free()
-	#remove Interactor
+func _add_items():
+	for item in Interactor.get_node("Inventory").get_children():
+		if item is Item:
+			_Inventory.AddItem(item)
+
+	Interactor.get_node("Inventory").queue_free()
+	Interactor.get_node("Notification").queue_free()
