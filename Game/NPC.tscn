@@ -3,19 +3,17 @@
 [ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=2]
 [ext_resource path="res://Assets/DevArt/Beefcake2021.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Art/Portraits/Gina.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/UI/AlertPassive.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="NPC" type="Sprite"]
-scale = Vector2( 0.510205, 0.510205 )
 texture = ExtResource( 3 )
 
 [node name="Notification" type="Sprite" parent="."]
 visible = false
-position = Vector2( 171.406, -257.109 )
-scale = Vector2( 0.0755002, 0.0755002 )
-texture = ExtResource( 5 )
+position = Vector2( 152.329, -289.672 )
+texture = ExtResource( 4 )
 
 [node name="Dialogue" type="Node" parent="."]
 script = ExtResource( 1 )

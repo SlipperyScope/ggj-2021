@@ -17,6 +17,7 @@ z_index = -2
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2723.88, -3770.81 )
+scale = Vector2( 0.483506, 0.483506 )
 
 [node name="Blurb" parent="NPC/Dialogue" index="0"]
 BlurbAudio = ExtResource( 7 )
@@ -29,6 +30,7 @@ BlurbText = "More lines I\"m not typing"
 
 [node name="NPC2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2539.88, -2414.81 )
+scale = Vector2( 0.635139, 0.635139 )
 
 [node name="Dialogue" parent="NPC2" index="1"]
 ForceStart = true
@@ -51,7 +53,6 @@ BlurbText = "Oops that's the boss"
 position = Vector2( -4442.67, -3105.81 )
 
 [node name="Camera2D" parent="Player" index="0"]
-zoom = Vector2( 1.25, 1.25 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="4"]
