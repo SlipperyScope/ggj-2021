@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game/NPC.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=5]
+[ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=7]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="level1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -210.099, 13.7911 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -4798.65, -3156.67 )
+
+[node name="Camera2D" parent="Player" index="0"]
+BackgroundSprite = NodePath("../../level1")
+
+[node name="Steve" parent="Player" index="4"]
+frame = 19
+
+[node name="Boss" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2189.18, -3186.22 )
+texture = ExtResource( 7 )
+
+[node name="Notification" parent="Boss" index="0"]
+visible = true
+position = Vector2( 166.563, -262.421 )
+
+[node name="Blurb" parent="Boss/Dialogue" index="0"]
+BlurbAudio = ExtResource( 4 )
+BlurbText = "Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company…"
+
+[node name="Blurb2" type="Node" parent="Boss/Dialogue" index="1"]
+script = ExtResource( 5 )
+BlurbAudio = ExtResource( 6 )
+BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh*"
+
+[editable path="Player"]
+
+[editable path="Boss"]

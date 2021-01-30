@@ -17,6 +17,7 @@ z_index = -2
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2723.88, -3770.81 )
+scale = Vector2( 0.483506, 0.483506 )
 
 [node name="Blurb" parent="NPC/Dialogue" index="0"]
 BlurbAudio = ExtResource( 7 )
@@ -29,6 +30,7 @@ BlurbText = "More lines I\"m not typing"
 
 [node name="NPC2" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2539.88, -2414.81 )
+scale = Vector2( 0.635139, 0.635139 )
 
 [node name="Dialogue" parent="NPC2" index="1"]
 ForceStart = true
@@ -54,7 +56,7 @@ position = Vector2( -4442.67, -3105.81 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="4"]
-frame = 6
+frame = 17
 
 [editable path="NPC"]
 

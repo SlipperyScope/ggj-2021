@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Dev Folders/Andrew/Andrew.gd" type="Script" id=2]
@@ -13,6 +13,11 @@
 [ext_resource path="res://Assets/VoiceLines/Imp_1_1.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/DevArt/Character.png" type="Texture" id=12]
 [ext_resource path="res://Items/Item.gd" type="Script" id=13]
+[ext_resource path="res://UI/Inventory/InventoryHUD.tscn" type="PackedScene" id=14]
+[ext_resource path="res://PlayerScripts/Inventory.gd" type="Script" id=15]
+[ext_resource path="res://Assets/DevArt/CoolHatPortrait.png" type="Texture" id=16]
+[ext_resource path="res://Items/CoolHat.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Items/Eggplant.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.7268, 31.8755 )
@@ -23,8 +28,8 @@ extents = Vector2( 31.7268, 31.8755 )
 script = ExtResource( 2 )
 
 [node name="level1" type="Sprite" parent="."]
-position = Vector2( 915.118, 423.609 )
-scale = Vector2( 0.316652, 0.316652 )
+position = Vector2( 1142.77, 693.031 )
+scale = Vector2( 1.00547, 1.00547 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -81,4 +86,33 @@ margin_bottom = 966.546
 [node name="Item" type="Node" parent="."]
 script = ExtResource( 13 )
 Portrait = SubResource( 2 )
+
+[node name="InventoryHUD" parent="." instance=ExtResource( 14 )]
+margin_left = 134.456
+margin_top = 720.38
+margin_right = 610.456
+margin_bottom = 1006.38
+_InventoryPath = NodePath("../Inventory")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource( 15 )
+
+[node name="Item" type="Node" parent="Inventory"]
+script = ExtResource( 13 )
+Tooltip = "pssst... it's a p*nis"
+Portrait = ExtResource( 12 )
+World = ExtResource( 18 )
+
+[node name="Item2" type="Node" parent="Inventory"]
+script = ExtResource( 13 )
+Tooltip = "Still a p*nis"
+Portrait = ExtResource( 12 )
+World = ExtResource( 18 )
+
+[node name="Item3" type="Node" parent="Inventory"]
+script = ExtResource( 13 )
+ItemType = 1
+Tooltip = "Cool"
+Portrait = ExtResource( 16 )
+World = ExtResource( 17 )
 [connection signal="input_event" from="DialogTrigger/Area2D" to="DialogTrigger" method="_on_Area2D_input_event"]
