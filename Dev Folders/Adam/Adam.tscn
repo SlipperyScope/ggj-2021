@@ -50,6 +50,14 @@ BlurbText = "Oops that's the boss"
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -4442.67, -3105.81 )
 
+[node name="Camera2D" parent="Player" index="0"]
+BackgroundSprite = NodePath("../../level1")
+
+[node name="Steve" parent="Player" index="4"]
+frame = 6
+
 [editable path="NPC"]
 
 [editable path="NPC2"]
+
+[editable path="Player"]
