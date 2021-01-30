@@ -9,6 +9,8 @@ var CurrentBlurb: Blurb
 var IsLastBlurb = false
 var IsFirstBlurb = false
 
+export (bool) var ForceStart = false
+
 func _ready():
 	for blurb in get_children():
 		if blurb is Blurb:
