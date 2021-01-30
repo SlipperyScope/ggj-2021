@@ -20,6 +20,11 @@ corner_radius_bottom_left = 24
 [node name="InventoryPortrait" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+hint_tooltip = "fgdfg"
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
@@ -29,17 +34,20 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
+visible = false
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 1916.0
-margin_bottom = 1076.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 906.0
-margin_top = 486.0
-margin_right = 1014.0
-margin_bottom = 594.0
+margin_left = 898.0
+margin_top = 478.0
+margin_right = 1006.0
+margin_bottom = 586.0
+mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -49,6 +57,7 @@ margin_top = 4.0
 margin_right = 104.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 100, 100 )
+mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource( 1 )
@@ -61,6 +70,7 @@ __meta__ = {
 [node name="Panel2" type="Panel" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 1916.0
-margin_bottom = 1076.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
