@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Characters/Steve.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Dialogue/DialogueBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerScripts/Camera.gd" type="Script" id=3]
 [ext_resource path="res://PlayerScripts/Movement.gd" type="Script" id=4]
+[ext_resource path="res://PlayerScripts/Inventory.gd" type="Script" id=5]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 212.067, 112.438 )
@@ -42,5 +44,17 @@ shape = SubResource( 2 )
 
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 z_index = -1
+frame = 1
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+margin_left = -1225.4
+margin_top = -659.682
+margin_right = -1225.4
+margin_bottom = -659.682
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_Area2D_area_exited"]
+
+[editable path="HUD"]
