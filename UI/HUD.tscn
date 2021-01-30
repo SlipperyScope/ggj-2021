@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/DevArt/Character.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/Portraits/BossDemon.png" type="Texture" id=2]
+[ext_resource path="res://Dev Folders/Andrew/AndrewTheme.tres" type="Theme" id=3]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.756863 )
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.756863 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+theme = ExtResource( 3 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryItems" type="HBoxContainer" parent="."]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 1096.0
+margin_bottom = 208.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="InventoryItems"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+hint_tooltip = "ppcaa"
+mouse_filter = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+
+[node name="Portrait" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 400, 400 )
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogueBox" type="MarginContainer" parent="."]
+margin_top = 553.0
+margin_right = 1920.0
+margin_bottom = 1016.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+size_flags_horizontal = 4
+size_flags_vertical = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contents" type="HBoxContainer" parent="DialogueBox"]
+margin_left = 231.0
+margin_top = 27.0
+margin_right = 1688.0
+margin_bottom = 459.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Spacer" type="ColorRect" parent="DialogueBox/Contents"]
+margin_right = 400.0
+margin_bottom = 432.0
+rect_min_size = Vector2( 400, 0 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="BlurbText" type="PanelContainer" parent="DialogueBox/Contents"]
+margin_left = 404.0
+margin_right = 1204.0
+margin_bottom = 432.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Textbox" type="RichTextLabel" parent="DialogueBox/Contents/BlurbText"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 784.0
+margin_bottom = 416.0
+grow_vertical = 0
+rect_min_size = Vector2( 768, 400 )
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_styles/focus = SubResource( 2 )
+text = "sdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfs"
+
+[node name="Buttons" type="VBoxContainer" parent="DialogueBox/Contents"]
+margin_left = 1208.0
+margin_right = 1457.0
+margin_bottom = 432.0
+
+[node name="NavUp" type="Button" parent="DialogueBox/Contents/Buttons"]
+margin_right = 249.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( -2032.45, -380 )
+hint_tooltip = "Previous blurb"
+size_flags_vertical = 0
+text = "Previous"
+
+[node name="NavDown" type="Button" parent="DialogueBox/Contents/Buttons"]
+margin_top = 89.0
+margin_right = 249.0
+margin_bottom = 174.0
+rect_pivot_offset = Vector2( -2032.45, -380 )
+hint_tooltip = "Next blurb"
+size_flags_vertical = 2
+text = "Next"
+
+[node name="Reply" type="Button" parent="DialogueBox/Contents/Buttons"]
+margin_top = 258.0
+margin_right = 249.0
+margin_bottom = 343.0
+rect_pivot_offset = Vector2( -2032.45, -380 )
+hint_tooltip = "Replay blurb"
+size_flags_vertical = 10
+text = "Replay"
+
+[node name="Proceed" type="Button" parent="DialogueBox/Contents/Buttons"]
+margin_top = 347.0
+margin_right = 249.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( -2032.45, -380 )
+hint_tooltip = "Proceed with dialogue"
+size_flags_vertical = 8
+text = "Proceed"

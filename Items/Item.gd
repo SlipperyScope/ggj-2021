@@ -1,6 +1,8 @@
 extends Node
 class_name Item
 
+
+
 enum ItemTypes{Eggplant, CoolHat}
 
 export (ItemTypes) var ItemType 

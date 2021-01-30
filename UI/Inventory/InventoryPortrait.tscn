@@ -12,10 +12,10 @@ border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 border_color = Color( 0.686275, 0.686275, 0.686275, 1 )
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="InventoryPortrait" type="MarginContainer"]
 anchor_right = 1.0
@@ -24,7 +24,6 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = -8.0
 margin_bottom = -8.0
-hint_tooltip = "fgdfg"
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource( 3 )
@@ -43,10 +42,10 @@ mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 898.0
-margin_top = 478.0
-margin_right = 1006.0
-margin_bottom = 586.0
+margin_left = 884.0
+margin_top = 464.0
+margin_right = 1020.0
+margin_bottom = 600.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -54,9 +53,9 @@ size_flags_vertical = 4
 [node name="Portrait" type="TextureRect" parent="MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 104.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 128, 128 )
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

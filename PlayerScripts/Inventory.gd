@@ -7,6 +7,9 @@ signal InventoryUpdated(items)
 var Items = []
 
 func _ready():
+	call_deferred("_DeferReady")
+	
+func _DeferReady():
 	for child in get_children():
 		if child is Item:
 			AddItem(child)
