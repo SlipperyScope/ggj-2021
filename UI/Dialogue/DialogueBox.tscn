@@ -23,8 +23,8 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 3844.0
-margin_bottom = 2164.0
+margin_right = 1916.0
+margin_bottom = 1076.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,17 +45,17 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 3844.0
-margin_bottom = 2164.0
+margin_right = 1916.0
+margin_bottom = 1076.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Offset" type="ColorRect" parent="HBoxContainer"]
-margin_top = 952.0
+margin_top = 408.0
 margin_right = 256.0
-margin_bottom = 1208.0
+margin_bottom = 664.0
 rect_min_size = Vector2( 256, 256 )
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -63,8 +63,8 @@ color = Color( 1, 0, 0.796078, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 margin_left = 260.0
-margin_right = 3840.0
-margin_bottom = 2160.0
+margin_right = 1912.0
+margin_bottom = 1072.0
 size_flags_horizontal = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -73,33 +73,33 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 3576.0
-margin_bottom = 2156.0
+margin_right = 1648.0
+margin_bottom = 1068.0
 
 [node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 3568.0
-margin_bottom = 2148.0
+margin_right = 1640.0
+margin_bottom = 1060.0
 custom_styles/panel = SubResource( 2 )
 
 [node name="BlurbDisplay" type="HBoxContainer" parent="HBoxContainer/MarginContainer"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 3576.0
-margin_bottom = 2156.0
+margin_right = 1648.0
+margin_bottom = 1068.0
 size_flags_horizontal = 3
 
 [node name="Blurb" type="RichTextLabel" parent="HBoxContainer/MarginContainer/BlurbDisplay"]
-margin_right = 3502.0
-margin_bottom = 2152.0
+margin_right = 1574.0
+margin_bottom = 1064.0
 size_flags_horizontal = 3
 
 [node name="Buttons" type="VBoxContainer" parent="HBoxContainer/MarginContainer/BlurbDisplay"]
-margin_left = 3506.0
-margin_top = 900.0
-margin_right = 3572.0
-margin_bottom = 1252.0
+margin_left = 1578.0
+margin_top = 356.0
+margin_right = 1644.0
+margin_bottom = 708.0
 size_flags_vertical = 4
 
 [node name="Navigate" type="VBoxContainer" parent="HBoxContainer/MarginContainer/BlurbDisplay/Buttons"]

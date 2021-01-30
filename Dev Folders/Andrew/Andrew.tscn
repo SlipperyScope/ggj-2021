@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Dev Folders/Andrew/Andrew.gd" type="Script" id=2]
@@ -12,9 +12,12 @@
 [ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/VoiceLines/Imp_1_1.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/DevArt/Character.png" type="Texture" id=12]
+[ext_resource path="res://Items/Item.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.7268, 31.8755 )
+
+[sub_resource type="ImageTexture" id=2]
 
 [node name="Andrew" type="Node2D"]
 script = ExtResource( 2 )
@@ -28,7 +31,7 @@ __meta__ = {
 }
 
 [node name="DialogTrigger" type="Sprite" parent="."]
-position = Vector2( 930.763, 243.515 )
+position = Vector2( 222.687, 122.562 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 __meta__ = {
@@ -69,8 +72,13 @@ BlurbText = "Hey. Hey buddy. Hey, come ‘ere. Yeah, you, who did ya’ think I 
 FaceTexture = ExtResource( 12 )
 
 [node name="DialogueBox" parent="." instance=ExtResource( 4 )]
+visible = false
 margin_left = 290.307
 margin_top = 499.546
 margin_right = 1670.31
 margin_bottom = 966.546
+
+[node name="Item" type="Node" parent="."]
+script = ExtResource( 13 )
+Portrait = SubResource( 2 )
 [connection signal="input_event" from="DialogTrigger/Area2D" to="DialogTrigger" method="_on_Area2D_input_event"]
