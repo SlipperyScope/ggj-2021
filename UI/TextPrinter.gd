@@ -16,6 +16,8 @@ export var PrintSpeed = 20.0
 # Message to print
 export var Message = ""
 
+var Printing = false
+
 var _PrintTimer: Timer
 var _CurrentIndex = -1
 
@@ -28,15 +30,16 @@ func Configure(message, speed):
 
 func Start(from: int = 0):
 	_CurrentIndex = from
+	Printing = true
 	emit_signal("PrintStarted")
 	_PrintNext()
 	_PrintTimer.start(1.0 / PrintSpeed)
-	pass
 
 func Skip():
 	_PrintTimer.stop()
 	_CurrentIndex = Message.length() - 1
 	_Textbox.text = Message
+	Printing = false
 	emit_signal("PrintComplete")
 
 func Reset():
@@ -44,6 +47,7 @@ func Reset():
 	_CurrentIndex = -1
 	Message = ""
 	PrintSpeed = 20.0
+	Printing = false
 	emit_signal("PrinterReset")
 
 func _PrintNext(finish := true):
@@ -52,6 +56,7 @@ func _PrintNext(finish := true):
 		emit_signal("PrintProgress")
 		_CurrentIndex += 1
 		if _CurrentIndex == Message.length():
+			Printing = false
 			emit_signal("PrintComplete")
 		if finish:
 			_PrintTimer.start(1.0 / PrintSpeed)

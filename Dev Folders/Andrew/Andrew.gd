@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var DialogueBox = $DialogueBox
+onready var DialogueBox = $HUD
 
 
 

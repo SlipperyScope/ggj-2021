@@ -1,9 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Dev Folders/Andrew/Andrew.gd" type="Script" id=2]
 [ext_resource path="res://Dev Folders/Andrew/DialogTrigger.gd" type="Script" id=3]
-[ext_resource path="res://UI/Dialogue/DialogueBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/DevArt/level1.png" type="Texture" id=5]
 [ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=6]
 [ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=7]
@@ -26,7 +25,6 @@ extents = Vector2( 31.7268, 31.8755 )
 script = ExtResource( 2 )
 
 [node name="level1" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1142.77, 693.031 )
 scale = Vector2( 1.00547, 1.00547 )
 texture = ExtResource( 5 )
@@ -35,7 +33,6 @@ __meta__ = {
 }
 
 [node name="DialogTrigger" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1758.16, 124.244 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
@@ -57,6 +54,7 @@ BlurbAudio = ExtResource( 7 )
 BlurbText = "Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company…
 "
 FaceTexture = ExtResource( 8 )
+CharacterName = "Beef"
 
 [node name="Blurb2" type="Node" parent="Dialogue"]
 script = ExtResource( 6 )
@@ -64,6 +62,7 @@ BlurbAudio = ExtResource( 10 )
 BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh* 
 "
 FaceTexture = ExtResource( 8 )
+CharacterName = "Beef"
 
 [node name="Blurb3" type="Node" parent="Dialogue"]
 script = ExtResource( 6 )
@@ -75,13 +74,7 @@ BlurbText = "Hey. Hey buddy. Hey, come ‘ere. Yeah, you, who did ya’ think I 
 
 *player tries to leave*"
 FaceTexture = ExtResource( 12 )
-
-[node name="DialogueBox" parent="." instance=ExtResource( 4 )]
-visible = false
-margin_left = 290.307
-margin_top = 499.546
-margin_right = 1670.31
-margin_bottom = 966.546
+CharacterName = "Eggplant"
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource( 15 )
@@ -113,9 +106,9 @@ Portrait = ExtResource( 8 )
 World = ExtResource( 17 )
 
 [node name="HUD" parent="." instance=ExtResource( 14 )]
-margin_left = 2.11877
-margin_top = -2.11905
-margin_right = 2.11877
-margin_bottom = -2.11905
+margin_left = 0.337032
+margin_top = -0.337251
+margin_right = 0.337032
+margin_bottom = -0.337251
 _InventoryPath = NodePath("../Inventory")
 [connection signal="input_event" from="DialogTrigger/Area2D" to="DialogTrigger" method="_on_Area2D_input_event"]

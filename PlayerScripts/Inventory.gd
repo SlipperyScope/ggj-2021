@@ -29,7 +29,7 @@ func RemoveItem(item, autoRemoveChild := true) -> bool:
 	var removedItem = Items[index]
 	Items.remove(index)
 	emit_signal("InventoryItemRemoved", removedItem)
-	emit_signal("InventoryUpdated")
+	emit_signal("InventoryUpdated", Items)
 
 	if autoRemoveChild:
 		remove_child(item)
