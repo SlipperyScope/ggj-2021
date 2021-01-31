@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/DevArt/Instructions.png" type="Texture" id=1]
+[ext_resource path="res://Assets/DevArt/Playbutton.png" type="Texture" id=2]
+[ext_resource path="res://Assets/DevArt/Playbutton_Over.png" type="Texture" id=3]
+[ext_resource path="res://UI/MainMenu.gd" type="Script" id=4]
+[ext_resource path="res://Levels/TheLevel.tscn" type="PackedScene" id=5]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Level = ExtResource( 5 )
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = -1.41422
+margin_top = 111.723
+margin_right = 1918.59
+margin_bottom = 1191.72
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 655.899
+margin_top = 77.3625
+margin_right = 1197.9
+margin_bottom = 515.362
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
