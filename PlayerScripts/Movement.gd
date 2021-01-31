@@ -1,17 +1,17 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-onready var DialogueBox = $DialogueBox
+onready var HUD = $CanvasLayer/HUD
 onready var Steve: AnimatedSprite = get_node("Steve")
 onready var _Inventory = get_node("Inventory")
 
 var velocity = Vector2()
-#var Dialogue
 var Interactor
 var DialogueBoxWorking = false
 
 func _ready():
-	DialogueBox.connect("DialogueFinished", self, "_print_finished")
+	pass
+	HUD.connect("DialogueFinished", self, "_print_finished")
 
 func get_input():
 	velocity = Vector2()
@@ -57,7 +57,8 @@ func _on_Area2D_area_exited(_area):
 		Interactor = null
 
 func _start_dialogue():
-	DialogueBox.StartDialogue(Interactor.get_node("Dialogue"))
+	HUD.StartDialogue(Interactor.get_node("Dialogue"))
+	Steve.animation = "idle"
 	DialogueBoxWorking = true
 
 func _print_finished():

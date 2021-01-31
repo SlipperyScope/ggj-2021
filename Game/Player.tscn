@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Characters/Steve.tscn" type="PackedScene" id=1]
-[ext_resource path="res://UI/Dialogue/DialogueBox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PlayerScripts/Camera.gd" type="Script" id=3]
 [ext_resource path="res://PlayerScripts/Movement.gd" type="Script" id=4]
 [ext_resource path="res://PlayerScripts/Inventory.gd" type="Script" id=5]
@@ -19,16 +18,10 @@ script = ExtResource( 4 )
 speed = 1000
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0.00012207, 16.9514 )
 current = true
 zoom = Vector2( 1.25, 1.25 )
 script = ExtResource( 3 )
-
-[node name="DialogueBox" parent="." instance=ExtResource( 2 )]
-visible = false
-margin_left = -1084.86
-margin_top = -679.724
-margin_right = 827.216
-margin_bottom = 400.276
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.17145, 62.7561 )
@@ -44,18 +37,15 @@ shape = SubResource( 2 )
 
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 z_index = -1
-frame = 16
+frame = 20
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource( 5 )
 SpecificItem = false
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
-margin_left = -1225.4
-margin_top = -659.682
-margin_right = -1225.4
-margin_bottom = -659.682
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 6 )]
+_InventoryPath = NodePath("../../Inventory")
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_Area2D_area_exited"]
-
-[editable path="HUD"]

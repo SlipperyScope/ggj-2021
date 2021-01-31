@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
@@ -9,59 +9,52 @@
 [ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=7]
 [ext_resource path="res://Game/ItemPlaceSpot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Art/Portraits/BossDemon.png" type="Texture" id=10]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="level1" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 0 )
 
-[node name="NPC" parent="." instance=ExtResource( 3 )]
-position = Vector2( -2075.28, -3088.5 )
-texture = ExtResource( 7 )
-
-[node name="Blurb" parent="NPC/Dialogue" index="0"]
-BlurbAudio = ExtResource( 9 )
-BlurbText = "Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company…"
-
-[node name="Blurb2" type="Node" parent="NPC/Dialogue" index="1"]
-script = ExtResource( 5 )
-BlurbAudio = ExtResource( 6 )
-BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh*"
-
-[node name="TriggerArea" parent="NPC" index="2"]
-scale = Vector2( 1.46291, 1.46291 )
-
-[node name="DeadHero" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1148.24, -2688.48 )
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4672.27, -3190.1 )
+position = Vector2( -3928.69, -3203.47 )
 
 [node name="Camera2D" parent="Player" index="0"]
 BackgroundSprite = NodePath("../../level1")
 
-[node name="Steve" parent="Player" index="4"]
-frame = 21
+[node name="Steve" parent="Player" index="3"]
+frame = 6
 
-[node name="HUD" parent="Player" index="6"]
-_InventoryPath = NodePath("../Inventory")
+[node name="NPC" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2750.57, -3178.04 )
+texture = ExtResource( 7 )
 
-[node name="Portrait" parent="Player/HUD" index="1"]
-visible = false
+[node name="Blurb" parent="NPC/Dialogue" index="0"]
+BlurbAudio = ExtResource( 9 )
+BlurbText = "Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company…
+"
+FaceTexture = ExtResource( 10 )
+CharacterName = "Punchlord"
 
-[node name="DialogueBox" parent="Player/HUD" index="2"]
-visible = false
+[node name="Blurb2" type="Node" parent="NPC/Dialogue" index="1"]
+script = ExtResource( 5 )
+BlurbAudio = ExtResource( 6 )
+BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh* 
+"
+FaceTexture = ExtResource( 10 )
+CharacterName = "Punchlord"
 
-[node name="Contents" parent="Player/HUD/DialogueBox" index="0"]
-margin_left = 615.0
-margin_top = 107.0
-margin_right = 1304.0
+[node name="DeadHero" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1129.54, -2731.27 )
 
 [node name="ItemPlaceSpot" parent="." instance=ExtResource( 8 )]
-position = Vector2( -137.887, -2653.69 )
+position = Vector2( -190.946, -1508.95 )
 
-[editable path="NPC"]
+[node name="Inventory" parent="ItemPlaceSpot" index="2"]
+RequiredItemType = 1
 
 [editable path="Player"]
 
-[editable path="Player/HUD"]
+[editable path="NPC"]
+
+[editable path="ItemPlaceSpot"]

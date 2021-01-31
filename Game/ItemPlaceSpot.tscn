@@ -26,21 +26,16 @@ shape = SubResource( 1 )
 script = ExtResource( 5 )
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
-margin_left = -122.906
-margin_top = -112.234
-margin_right = -122.906
-margin_bottom = -112.234
+margin_left = -157.829
+margin_top = -223.352
+margin_right = -157.829
+margin_bottom = -223.352
 _InventoryPath = NodePath("../Inventory")
 
 [node name="Portrait" parent="HUD" index="1"]
 visible = false
 
-[node name="DialogueBox" parent="HUD" index="2"]
+[node name="DialogueBox" parent="HUD" index="3"]
 visible = false
-
-[node name="Contents" parent="HUD/DialogueBox" index="0"]
-margin_left = 615.0
-margin_top = 107.0
-margin_right = 1304.0
 
 [editable path="HUD"]
