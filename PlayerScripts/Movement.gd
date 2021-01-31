@@ -29,7 +29,7 @@ func _physics_process(_delta):
 	if (!DialogueBoxWorking):
 		get_input()
 		velocity = move_and_slide(velocity)
-		if velocity.length() > 0 : 
+		if velocity.length() > 0 :
 			Steve.animation = "walk"
 			if velocity.x < 0: Steve.flip_h = true
 			elif velocity.x > 0: Steve.flip_h = false
@@ -50,7 +50,7 @@ func _on_Area2D_area_entered(_area):
 	if Interactor.has_node("Notification"):
 		Interactor.get_node("Notification").play("NotificationAnimation")
 
-	if Interactor.InteractionType == Interactable.Interaction.Dialogue: 
+	if Interactor is Interactable and Interactor.InteractionType == Interactable.Interaction.Dialogue:
 		_start_dialogue(true)
 
 func _on_Area2D_area_exited(_area):
@@ -64,10 +64,10 @@ func _start_dialogue(forced := false):
 		if "NoCloak" in item.name: continue
 		if item is Dialogue && (!forced || item.ForceStart):
 			if item.FirstOnly:
-				if !item.Heard: 
+				if !item.Heard:
 					_actually_play_dialogue(item)
 					break
-			else: 
+			else:
 				_actually_play_dialogue(item)
 				break
 
@@ -108,4 +108,4 @@ func _place_item():
 			Interactor.get_node("Notification").queue_free()
 			Interactor.get_node("NotiSprite").queue_free()
 			break
-	
+
