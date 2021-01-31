@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Guard2_1_1.wav-fb8a58492d46390bcdd5db962e32ea41.sample"
+
+[deps]
+
+source_file="res://Assets/VoiceLines/Raw/Guard2_1_1.wav"
+dest_files=[ "res://.import/Guard2_1_1.wav-fb8a58492d46390bcdd5db962e32ea41.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
