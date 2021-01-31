@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
@@ -6,11 +6,12 @@
 [ext_resource path="res://Game/DeadHero.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=5]
 [ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/Portraits/Steve.png" type="Texture" id=7]
 [ext_resource path="res://Game/ItemPlaceSpot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Art/Portraits/BossDemon.png" type="Texture" id=10]
 [ext_resource path="res://Assets/VoiceLines/Silence.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 363.436, 10 )
@@ -27,11 +28,14 @@ position = Vector2( -3928.69, -3203.47 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="3"]
-frame = 1
+frame = 19
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
-position = Vector2( -2750.57, -3178.04 )
-texture = ExtResource( 7 )
+position = Vector2( -2442.56, -3124.3 )
+texture = ExtResource( 12 )
+
+[node name="NotiSprite" parent="NPC" index="0"]
+position = Vector2( 120.257, -102.038 )
 
 [node name="Blurb" parent="NPC/Dialogue" index="0"]
 BlurbAudio = ExtResource( 9 )
@@ -44,6 +48,7 @@ CharacterName = "Punchlord"
 script = ExtResource( 5 )
 BlurbAudio = ExtResource( 11 )
 BlurbText = "Uhh..."
+FaceTexture = ExtResource( 7 )
 
 [node name="Blurb3" type="Node" parent="NPC/Dialogue" index="2"]
 script = ExtResource( 5 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Art/Sprites/loot.png" type="Texture" id=1]
+[ext_resource path="res://Items/Item.gd" type="Script" id=2]
+
+[node name="Loot" type="Node"]
+script = ExtResource( 2 )
+ItemType = 4
+Tooltip = "Sack of Loot"
+Portrait = ExtResource( 1 )

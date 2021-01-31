@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/DevArt/CoolHatPortrait.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Art/Characters/FallenHero.png" type="Texture" id=2]
@@ -10,12 +10,27 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
+[sub_resource type="Animation" id=2]
+resource_name = "NotificationAnimation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NotiSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 119.303, -110.386 ), Vector2( 119.303, -154.386 ) ]
+}
+
 [node name="DeadHero" type="Sprite"]
 texture = ExtResource( 2 )
 
-[node name="Notification" type="Sprite" parent="."]
-visible = false
-position = Vector2( 119.303, -110.386 )
+[node name="NotiSprite" type="Sprite" parent="."]
+position = Vector2( 119.303, -124.996 )
 texture = ExtResource( 7 )
 
 [node name="TriggerArea" type="Area2D" parent="."]
@@ -39,3 +54,6 @@ ItemType = 1
 Tooltip = "Just the Tooltip"
 Portrait = ExtResource( 1 )
 World = ExtResource( 4 )
+
+[node name="Notification" type="AnimationPlayer" parent="."]
+anims/NotificationAnimation = SubResource( 2 )

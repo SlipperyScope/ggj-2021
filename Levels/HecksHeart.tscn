@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="level1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4607.51, 3625.67 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="NPCs" type="Node2D" parent="YSort"]
+
+[node name="Pedistals" type="Node2D" parent="YSort"]
+
+[node name="Gates" type="Node2D" parent="YSort"]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 927.154, 462.454 )
