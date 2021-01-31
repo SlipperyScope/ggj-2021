@@ -20,7 +20,6 @@
 [node name="Dialogue" parent="." index="1"]
 FirstOnly = false
 RequiredInventory = [ 3 ]
-ForceStart = true
 
 [node name="Imp" parent="Dialogue" index="0" instance=ExtResource( 3 )]
 BlurbAudio = ExtResource( 4 )
@@ -55,6 +54,7 @@ BlurbText = "Okay, okay, I’ll get to the point. Long story short, I may have s
 [node name="NoCloakDialogue" type="Node" parent="." index="4"]
 script = ExtResource( 2 )
 FirstOnly = false
+ForceStart = true
 
 [node name="Imp" parent="NoCloakDialogue" index="0" instance=ExtResource( 3 )]
 BlurbAudio = ExtResource( 12 )

@@ -72,6 +72,7 @@ func _ReadyDialogue():
 
 func StartDialogue(dialogue: Dialogue):
 	_Dialogue = dialogue
+	_Dialogue.Heard = true
 	_DialogueBox.visible = true
 	_BlurbBox.visible = true
 	_Portrait.visible = true
