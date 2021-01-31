@@ -28,7 +28,7 @@ position = Vector2( -3928.69, -3203.47 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="3"]
-frame = 19
+frame = 6
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2442.56, -3124.3 )

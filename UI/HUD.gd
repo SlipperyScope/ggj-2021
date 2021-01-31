@@ -135,9 +135,9 @@ func _NavDownPressed():
 
 func _ProceedPressed():
 	if _Printing:
-		_Printer.Skip()
+		if !_Dialogue.ForceStart: _Printer.Skip()
 	if _Playing:
-		_Player.stop()
+		if !_Dialogue.ForceStart: _Player.stop()
 	elif _Dialogue.IsLastBlurb:
 		StopDialogue()
 		#_UpdateButton()
