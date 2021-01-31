@@ -1,0 +1,59 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Interactables/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Blurbs/Imp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_6.wav" type="AudioStream" id=4]
+[ext_resource path="res://Blurbs/SteveOkay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_2.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_3.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_1.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_4.wav" type="AudioStream" id=9]
+[ext_resource path="res://Blurbs/SteveUmm.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Blurbs/SteveUhhh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/VoiceLines/Imp_1_5.wav" type="AudioStream" id=12]
+
+[node name="Imp" instance=ExtResource( 1 )]
+
+[node name="Dialogue" parent="." index="1"]
+FirstOnly = false
+RequiredInventory = [ 3 ]
+ForceStart = true
+
+[node name="Imp" parent="Dialogue" index="0" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 4 )
+BlurbText = "What!? Who said that!"
+
+[node name="NoCloakDialogueFirst" type="Node" parent="." index="3"]
+script = ExtResource( 2 )
+ForceStart = true
+
+[node name="Imp" parent="NoCloakDialogueFirst" index="0" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 8 )
+BlurbText = "Hey. Hey buddy. Hey, come ‘ere. Yeah, you, who did ya’ think I meant, the mouse? I mean, she’s cool and all, but listen. I’ve got a secret for ya’. No, don’t walk away, this is important! See, this whole dungeon, it’s all a show, right? Like, what, we’re supposed to believe that heroes just march in here day after day, just to die over and over again? And for what, a sack of loot? You gotta be kiddin’ me. Say, buddy, I think you’d best make like a tree and root out what this is all about. Ya’ see, the DM, they’re a no good weasel. No, not actually a weasel. Well, I haven’t met them, maybe they’re a weasel, but I digress. They’re a no good weasel, and they’re using you."
+
+[node name="SteveOkay" parent="NoCloakDialogueFirst" index="1" instance=ExtResource( 5 )]
+
+[node name="Imp2" parent="NoCloakDialogueFirst" index="2" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 6 )
+BlurbText = "Hey, hold on a minute. Didn’t you mother teach you any manners? When I was an implet, I’d get smacked right upside the horns if I walked away from her when she was talkin’ to me. Ah, sometimes I miss the old bag. Dead? What kind of question is that, of course she’s not dead! She just don’t talk to me. Not since the incident. Ya’ know, the incident. But we don’t talk about the incident. Better get out of here before I tell ya’, or you’ll regret it."
+
+[node name="SteveUmm" parent="NoCloakDialogueFirst" index="3" instance=ExtResource( 10 )]
+
+[node name="Imp3" parent="NoCloakDialogueFirst" index="4" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 7 )
+BlurbText = "So, you wanna hear about the incident, eh? Okay, I’ll tell ya about the incident. Was the summer of ‘42. 1342, that is. I was a young lad of 500. Still under my mother’s wing. Literally, she’s got big wings - five meter span! Anyway, so I’m under my mother’s wing, and we’re out for a walk. It’s a beautiful day, ash falling from the sky, the screams of the damned echoing throughout the countryside, really picturesque ‘n all. I ask my mum if we can get some lavacream. She says no, we’ve got lavacream at home. I get a little upset, maybe throw a bit of a tantrum, and she says fine, no lavacream for you at all then! And I says…"
+
+[node name="SteveUhh" parent="NoCloakDialogueFirst" index="5" instance=ExtResource( 11 )]
+
+[node name="Imp4" parent="NoCloakDialogueFirst" index="6" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 9 )
+BlurbText = "Okay, okay, I’ll get to the point. Long story short, I may have sorta… caused the black plague. But I swear, I only gave the rats lavacream to get back at my mother! Plus, those humans deserved it. No offense. Oh, what do I care, you probably deserve it too. Jerk."
+
+[node name="NoCloakDialogue" type="Node" parent="." index="4"]
+script = ExtResource( 2 )
+FirstOnly = false
+
+[node name="Imp" parent="NoCloakDialogue" index="0" instance=ExtResource( 3 )]
+BlurbAudio = ExtResource( 12 )
+BlurbText = "Look, I know you want to sit around ‘n’ talk instead of workin’, but the boss’ll file my horns if he catches me slackin’ off again. And trust me, it ain’t as nice as it sounds. Now scram."
