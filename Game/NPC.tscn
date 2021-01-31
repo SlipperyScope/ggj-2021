@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=2]
@@ -7,12 +7,27 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
+[sub_resource type="Animation" id=2]
+resource_name = "NotificationAnimation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NotiSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 152.329, -289.672 ), Vector2( 152.329, -333.672 ) ]
+}
+
 [node name="NPC" type="Sprite"]
 texture = ExtResource( 3 )
 
-[node name="Notification" type="Sprite" parent="."]
-visible = false
-position = Vector2( 152.329, -289.672 )
+[node name="NotiSprite" type="Sprite" parent="."]
+position = Vector2( 152.329, -333.672 )
 texture = ExtResource( 4 )
 
 [node name="Dialogue" type="Node" parent="."]
@@ -27,3 +42,6 @@ scale = Vector2( 2.13474, 2.13474 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
 scale = Vector2( 36.8919, 36.8919 )
 shape = SubResource( 1 )
+
+[node name="Notification" type="AnimationPlayer" parent="."]
+anims/NotificationAnimation = SubResource( 2 )
