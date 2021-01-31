@@ -15,4 +15,8 @@ NoAudio = true
 BlurbText = "Noted..."
 
 [node name="Sprite" parent="." index="3"]
+position = Vector2( -8.47571, -96.4111 )
 texture = ExtResource( 2 )
+
+[node name="NotiSprite" parent="." index="4"]
+position = Vector2( 101.802, -232.101 )

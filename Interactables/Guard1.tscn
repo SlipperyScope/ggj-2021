@@ -24,4 +24,8 @@ FirstOnly = false
 BlurbText = "You don’t look like anyone I’ve seen with the regular clean-up crew… you’re not an imposter, are you?"
 
 [node name="Sprite" parent="." index="4"]
+position = Vector2( 6.74243, -83.156 )
 texture = ExtResource( 6 )
+
+[node name="NotiSprite" parent="." index="5"]
+position = Vector2( 103.567, -192.293 )

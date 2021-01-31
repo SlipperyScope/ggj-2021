@@ -15,7 +15,11 @@ NoAudio = true
 [node name="SteveOkay" parent="Dialogue" index="1" instance=ExtResource( 4 )]
 
 [node name="Sprite" parent="." index="3"]
+position = Vector2( 1.1225, -80.8173 )
 texture = ExtResource( 2 )
+
+[node name="NotiSprite" parent="." index="4"]
+position = Vector2( 99.105, -176.528 )
 
 [node name="Dialogue2" type="Node" parent="." index="6"]
 script = ExtResource( 5 )

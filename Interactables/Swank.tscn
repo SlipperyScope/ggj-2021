@@ -213,7 +213,11 @@ FirstOnly = false
 BlurbAudio = ExtResource( 6 )
 BlurbText = "Mmm mmm, bah! Mmm mmm bah! Yeah! Alright!"
 
+[node name="NotiSprite" parent="." index="5"]
+position = Vector2( 118.775, -275.778 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="7"]
+position = Vector2( -45.1899, -152.219 )
 frames = SubResource( 37 )
-frame = 31
+frame = 18
 playing = true

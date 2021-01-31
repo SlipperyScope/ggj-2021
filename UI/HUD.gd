@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	visible = true
 	_ReadyInventory()
 	_ReadyDialogue()
 
