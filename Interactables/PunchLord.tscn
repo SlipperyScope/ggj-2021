@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Interactables/Interactable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Blurbs/PunchLord.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Blurbs/Steve.tscn" type="PackedScene" id=5]
+
+[node name="PunchLord" instance=ExtResource( 2 )]
+
+[node name="Punchlord" parent="Dialogue" index="0" instance=ExtResource( 4 )]
+BlurbAudio = ExtResource( 1 )
+BlurbText = "✅Dungeon Boss (Boss_1_1): 
+Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company."
+
+[node name="Steve" parent="Dialogue" index="1" instance=ExtResource( 5 )]
+BlurbText = "Uhh...."
+
+[node name="Punchlord2" parent="Dialogue" index="2" instance=ExtResource( 4 )]
+BlurbAudio = ExtResource( 3 )
+BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh*"
+
+[node name="Inventory" parent="." index="2"]
+SpecificItem = false
