@@ -1,11 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Interactables/Interactable.gd" type="Script" id=1]
 [ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=2]
 [ext_resource path="res://PlayerScripts/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Art/UI/AlertPassive.png" type="Texture" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 4800.5
+radius = 650.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "NotificationAnimation"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NotiSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 121.933, -111.322 ), Vector2( 121.933, -149.322 ) ]
+}
 
 [node name="Interactable" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,3 +37,12 @@ script = ExtResource( 2 )
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="NotiSprite" type="Sprite" parent="."]
+position = Vector2( 128.289, -147.344 )
+texture = ExtResource( 5 )
+
+[node name="Notification" type="AnimationPlayer" parent="."]
+anims/NotificationAnimation = SubResource( 2 )

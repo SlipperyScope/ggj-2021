@@ -39,9 +39,9 @@ func _process(_delta):
 	if !DialogueBoxWorking:
 		if Interactor:
 			if Input.is_action_pressed('ui_accept'):
-				if Interactor.has_node("Dialogue"): _start_dialogue()
-				elif Interactor.has_node("TakeMe"): _add_items()
-				elif Interactor.has_node("Inventory"): _place_item()
+				if Interactor.InteractionType == Interactable.Interaction.Dialogue: _start_dialogue()
+				elif Interactor.InteractionType == Interactable.Interaction.Pickup: _add_items()
+				elif Interactor.InteractionType == Interactable.Interaction.Putdown: _place_item()
 		elif Input.is_action_pressed('ui_accept') && !$Horn.playing: $Horn.play()
 
 func _on_Area2D_area_entered(_area):
@@ -49,7 +49,7 @@ func _on_Area2D_area_entered(_area):
 	if Interactor.has_node("Notification"):
 		Interactor.get_node("Notification").play("NotificationAnimation")
 
-	if Interactor.has_node("Dialogue"): 
+	if Interactor.InteractionType == Interactable.Interaction.Dialogue: 
 		var Dialogue = Interactor.get_node("Dialogue")
 		if Dialogue.ForceStart: _start_dialogue()
 
@@ -67,11 +67,11 @@ func _print_finished():
 	DialogueBoxWorking = false
 
 func _add_items():
-	for item in Interactor.get_node("TakeMe").get_children():
+	for item in Interactor.get_node("Inventory").get_children():
 		if item is Item:
 			_Inventory.AddItem(item, false)
 
-	Interactor.get_node("TakeMe").queue_free()
+	Interactor.InteractionType = Interactable.Interaction.None
 	Interactor.get_node("Notification").queue_free()
 	Interactor.get_node("NotiSprite").queue_free()
 
@@ -86,6 +86,7 @@ func _place_item():
 			destInventory.AddItem(item, false)
 			_Inventory.RemoveItem(item, false)
 			destInventory.RequiredItemType = null
+			Interactor.InteractionType = Interactable.Interaction.None
 			Interactor.get_node("Notification").queue_free()
 			Interactor.get_node("NotiSprite").queue_free()
 			break

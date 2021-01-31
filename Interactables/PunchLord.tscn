@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Interactables/Interactable.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Blurbs/PunchLord.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=5]
 [ext_resource path="res://Blurbs/SteveUhhh.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=7]
 
 [node name="PunchLord" instance=ExtResource( 2 )]
 
@@ -26,3 +27,9 @@ FirstOnly = false
 [node name="Punchlord" parent="Dialogue2" index="0" instance=ExtResource( 4 )]
 BlurbAudio = ExtResource( 3 )
 BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh*"
+
+[node name="Sprite" parent="." index="4"]
+texture = ExtResource( 7 )
+
+[node name="NotiSprite" parent="." index="5"]
+position = Vector2( 170.668, -277.876 )

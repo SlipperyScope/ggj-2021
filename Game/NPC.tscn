@@ -27,7 +27,7 @@ tracks/0/keys = {
 texture = ExtResource( 3 )
 
 [node name="NotiSprite" type="Sprite" parent="."]
-position = Vector2( 148.329, -132.791 )
+position = Vector2( 148.329, -181.672 )
 texture = ExtResource( 4 )
 
 [node name="Dialogue" type="Node" parent="."]

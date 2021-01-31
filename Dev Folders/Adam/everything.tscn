@@ -1,17 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Game/NPC.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Game/DeadHero.tscn" type="PackedScene" id=4]
-[ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=5]
-[ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Art/Portraits/Steve.png" type="Texture" id=7]
+[ext_resource path="res://Interactables/ItemPlace.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/ItemPlaceSpot.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/VoiceLines/Boss_1_1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Art/Portraits/BossDemon.png" type="Texture" id=10]
-[ext_resource path="res://Assets/VoiceLines/Silence.wav" type="AudioStream" id=11]
-[ext_resource path="res://Assets/Art/Characters/Boss1.png" type="Texture" id=12]
+[ext_resource path="res://Interactables/PunchLord.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Interactables/FallenHero.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 363.436, 10 )
@@ -19,7 +13,6 @@ extents = Vector2( 363.436, 10 )
 [node name="Node2D" type="Node2D"]
 
 [node name="level1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3928.69, -3203.47 )
@@ -28,38 +21,7 @@ position = Vector2( -3928.69, -3203.47 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="3"]
-frame = 6
-
-[node name="NPC" parent="." instance=ExtResource( 3 )]
-position = Vector2( -2442.56, -3124.3 )
-texture = ExtResource( 12 )
-
-[node name="NotiSprite" parent="NPC" index="0"]
-position = Vector2( 120.257, -102.038 )
-
-[node name="Blurb" parent="NPC/Dialogue" index="0"]
-BlurbAudio = ExtResource( 9 )
-BlurbText = "Heh, he put up a fight, but without the rest of his party that hero didn’t stand a chance. It’s a shame, really. Been a while since a hero made it this far. Much less one that actually managed to find the power sword. I’ve told the DM that hiding it behind that bookcase might make it a bit too hard to find, but he won’t listen to me. *Sigh* such a shame. Born to fight and all I ever do is stand here in this conspicuously empty room with only a few jars to keep me company…
-"
-FaceTexture = ExtResource( 10 )
-CharacterName = "Punchlord"
-
-[node name="Blurb2" type="Node" parent="NPC/Dialogue" index="1"]
-script = ExtResource( 5 )
-BlurbAudio = ExtResource( 11 )
-BlurbText = "Uhh..."
-FaceTexture = ExtResource( 7 )
-
-[node name="Blurb3" type="Node" parent="NPC/Dialogue" index="2"]
-script = ExtResource( 5 )
-BlurbAudio = ExtResource( 6 )
-BlurbText = "Run along now. I’m sure they’ll be another hero along any minute, and you wouldn’t want to be here when things get ugly. Yep, any minute now… *sigh* 
-"
-FaceTexture = ExtResource( 10 )
-CharacterName = "Punchlord"
-
-[node name="DeadHero" parent="." instance=ExtResource( 4 )]
-position = Vector2( -1129.54, -2731.27 )
+frame = 16
 
 [node name="ItemPlaceSpot" parent="." instance=ExtResource( 8 )]
 position = Vector2( -190.946, -1508.95 )
@@ -74,8 +36,15 @@ position = Vector2( 2123.94, -1168.33 )
 scale = Vector2( 1.39399, 29.4316 )
 shape = SubResource( 1 )
 
-[editable path="Player"]
+[node name="PunchLord" parent="." instance=ExtResource( 13 )]
+position = Vector2( -2413.93, -3932.99 )
 
-[editable path="NPC"]
+[node name="FallenHero" parent="." instance=ExtResource( 14 )]
+position = Vector2( -2499.43, -2575.39 )
+
+[node name="ItemPlace" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1051.87, -3058.96 )
+
+[editable path="Player"]
 
 [editable path="ItemPlaceSpot"]
