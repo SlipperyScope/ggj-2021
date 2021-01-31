@@ -25,20 +25,21 @@ zoom = Vector2( 1.25, 1.25 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.17145, 62.7561 )
+position = Vector2( -0.069216, -0.731571 )
 scale = Vector2( 0.19999, 0.24236 )
 shape = SubResource( 1 )
 
 [node name="PlayerArea" type="Area2D" parent="."]
-visible = false
+position = Vector2( -3.36359, -73.5784 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 scale = Vector2( 1, 14.44 )
 shape = SubResource( 2 )
 
 [node name="Steve" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.26135, -81.9874 )
 z_index = -1
-frame = 18
+frame = 14
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource( 5 )
