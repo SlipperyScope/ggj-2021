@@ -26,7 +26,6 @@ SpecificItem = false
 [node name="Dialogue2" type="Node" parent="." index="3"]
 script = ExtResource( 5 )
 FirstOnly = false
-RequiredInventory = [ 0, 0 ]
 
 [node name="Punchlord" parent="Dialogue2" index="0" instance=ExtResource( 4 )]
 BlurbAudio = ExtResource( 3 )
