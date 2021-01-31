@@ -115,8 +115,9 @@ func ClearBlurb():
 
 func StartBlurb():
 	if !_Blurb.Played:
-		_Player.play()
-		_AudioStarted()
+		if !_Blurb.NoAudio:
+			_Player.play()
+			_AudioStarted()
 		_Printer.Start()
 	else:
 		_Printer.Skip()
@@ -133,9 +134,10 @@ func _NavDownPressed():
 	StartBlurb()
 
 func _ProceedPressed():
-	if _Printing or _Playing:
-		_Player.stop()
+	if _Printing:
 		_Printer.Skip()
+	if _Playing:
+		_Player.stop()
 	elif _Dialogue.IsLastBlurb:
 		StopDialogue()
 		#_UpdateButton()
@@ -170,4 +172,6 @@ func _UpdateButton():
 	_NavDown.disabled = _Dialogue.IsLastBlurb || !_Blurb.Played
 
 func _CalculatePrintSpeed(blurb):
+	if blurb.NoAudio:
+		return blurb.DefaultTextSpeed
 	return blurb.BlurbText.length() / blurb.BlurbAudio.get_length()

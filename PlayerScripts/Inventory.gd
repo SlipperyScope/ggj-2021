@@ -1,4 +1,5 @@
 extends Node
+class_name Inventory
 
 signal InventoryItemAdded(item)
 signal InventoryItemRemoved(item)
