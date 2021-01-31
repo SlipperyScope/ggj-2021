@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Art/Sprites/shield.png" type="Texture" id=1]
+[ext_resource path="res://Items/Item.gd" type="Script" id=2]
+
+[node name="Shield" type="Node"]
+script = ExtResource( 2 )
+ItemType = 1
+Tooltip = "Super Sick Shield"
+Portrait = ExtResource( 1 )
