@@ -44,10 +44,11 @@ shape = SubResource( 2 )
 
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 z_index = -1
-frame = 1
+frame = 16
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource( 5 )
+SpecificItem = false
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 margin_left = -1225.4
