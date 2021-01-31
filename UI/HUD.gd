@@ -81,6 +81,7 @@ func StopDialogue():
 	_DialogueBox.visible = false
 	_BlurbBox.visible = false
 	_Portrait.visible = false
+	_Dialogue.Reset(true)
 	emit_signal("DialogueFinished")
 		
 func _NextBlurb():
@@ -122,12 +123,12 @@ func StartBlurb():
 		_AudioComplete()
 
 func _NavUpPressed():
-	print("NavUp")
+	#print("NavUp")
 	ChangeBlurb(_Dialogue.GetPreviousBlurb())
 	StartBlurb()
 
 func _NavDownPressed():
-	print("NavDown")
+	#print("NavDown")
 	ChangeBlurb(_Dialogue.GetNextBlurb())
 	StartBlurb()
 
@@ -137,7 +138,7 @@ func _ProceedPressed():
 		_Printer.Skip()
 	elif _Dialogue.IsLastBlurb:
 		StopDialogue()
-		_UpdateButton()
+		#_UpdateButton()
 	else:
 		_NextBlurb()
 

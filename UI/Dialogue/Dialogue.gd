@@ -38,3 +38,12 @@ func _UpdateBlurbEnds():
 		IsLastBlurb = true
 	if CurrentIndex == 0:
 		IsFirstBlurb = true
+
+func Reset(resetPlayedFlags = true):
+	CurrentIndex = -1
+	CurrentBlurb = null
+	IsLastBlurb = false
+	IsFirstBlurb = false
+	if resetPlayedFlags:
+		for blurb in _Blurbs:
+			blurb.Played = false	
