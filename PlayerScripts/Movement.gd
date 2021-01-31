@@ -40,12 +40,13 @@ func _process(_delta):
 		if Interactor:
 			if Input.is_action_pressed('ui_accept'):
 				if Interactor.InteractionType == Interactable.Interaction.Dialogue: _start_dialogue()
-				elif Interactor.InteractionType == Interactable.Interaction.Pickup: _add_items()
 				elif Interactor.InteractionType == Interactable.Interaction.Putdown: _place_item()
 		elif Input.is_action_pressed('ui_accept') && !$Horn.playing: $Horn.play()
 
 func _on_Area2D_area_entered(_area):
 	Interactor = _area.get_parent()
+	if Interactor.InteractionType == Interactable.Interaction.Pickup: _add_items()
+
 	if Interactor.has_node("Notification"):
 		Interactor.get_node("Notification").play("NotificationAnimation")
 
