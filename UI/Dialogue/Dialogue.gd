@@ -1,6 +1,10 @@
 extends Node
 class_name Dialogue
 
+export var FirstOnly = true
+var Heard = false
+export (Array, Item.ItemTypes) var RequiredInventory
+
 var _Blurbs = []
 
 var BlurbCount = 0
