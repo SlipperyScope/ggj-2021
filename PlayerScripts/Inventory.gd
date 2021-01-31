@@ -4,6 +4,9 @@ signal InventoryItemAdded(item)
 signal InventoryItemRemoved(item)
 signal InventoryUpdated(items)
 
+export (bool) var SpecificItem = true
+export (Item.ItemTypes) var RequiredItemType 
+
 var Items = []
 
 func _ready():
@@ -16,10 +19,12 @@ func _DeferReady():
 
 func AddItem(item, autoAddChild := true):
 	Items.append(item)
+	item.get_parent().remove_child(item)
+	add_child(item, false)
 	emit_signal("InventoryItemAdded", item)
 	emit_signal("InventoryUpdated", Items)
 	if autoAddChild:
-		add_child(item)
+		add_child(item, false)
 
 func RemoveItem(item, autoRemoveChild := true) -> bool:
 	var index = Items.find(item)
