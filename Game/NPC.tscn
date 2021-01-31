@@ -2,7 +2,7 @@
 
 [ext_resource path="res://UI/Dialogue/Dialogue.gd" type="Script" id=1]
 [ext_resource path="res://UI/Dialogue/Blurb.gd" type="Script" id=2]
-[ext_resource path="res://Assets/DevArt/Beefcake2021.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Characters/BeefCake.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Art/UI/AlertPassive.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -20,14 +20,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 152.329, -289.672 ), Vector2( 152.329, -333.672 ) ]
+"values": [ Vector2( 148.329, -125.672 ), Vector2( 148.329, -181.672 ) ]
 }
 
 [node name="NPC" type="Sprite"]
 texture = ExtResource( 3 )
 
 [node name="NotiSprite" type="Sprite" parent="."]
-position = Vector2( 152.329, -333.672 )
+position = Vector2( 148.329, -132.791 )
 texture = ExtResource( 4 )
 
 [node name="Dialogue" type="Node" parent="."]
