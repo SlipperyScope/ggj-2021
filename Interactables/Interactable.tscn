@@ -10,7 +10,7 @@
 resource_name = "NotificationAnimation"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("NotiSprite:position")
+tracks/0/path = NodePath("Node2D/NotiSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -38,9 +38,12 @@ script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-[node name="NotiSprite" type="Sprite" parent="."]
-position = Vector2( 128.289, -147.344 )
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="NotiSprite" type="Sprite" parent="Node2D"]
+position = Vector2( 121.933, -123.558 )
 texture = ExtResource( 5 )
 
-[node name="Notification" type="AnimationPlayer" parent="."]
+[node name="Notification" type="AnimationPlayer" parent="Node2D"]
+root_node = NodePath("../..")
 anims/NotificationAnimation = SubResource( 1 )

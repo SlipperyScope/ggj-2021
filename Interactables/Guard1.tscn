@@ -27,5 +27,5 @@ BlurbText = "You don’t look like anyone I’ve seen with the regular clean-up 
 position = Vector2( 6.74243, -83.156 )
 texture = ExtResource( 6 )
 
-[node name="NotiSprite" parent="." index="5"]
-position = Vector2( 103.567, -192.293 )
+[node name="Node2D" parent="." index="5"]
+position = Vector2( -23.973, -59.1831 )

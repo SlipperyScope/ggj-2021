@@ -35,5 +35,8 @@ BlurbText = "Run along now. I’m sure they’ll be another hero along any minut
 position = Vector2( -53.74, -280.014 )
 texture = ExtResource( 7 )
 
-[node name="NotiSprite" parent="." index="5"]
-position = Vector2( 128.242, -589.003 )
+[node name="Node2D" parent="." index="5"]
+position = Vector2( 16.9707, -466.691 )
+
+[node name="NotiSprite" parent="Node2D" index="0"]
+position = Vector2( 121.933, -137.744 )

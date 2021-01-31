@@ -20,6 +20,7 @@
 [node name="Dialogue" parent="." index="1"]
 FirstOnly = false
 RequiredInventory = [ 3 ]
+ForceStart = true
 
 [node name="Imp" parent="Dialogue" index="0" instance=ExtResource( 3 )]
 BlurbAudio = ExtResource( 4 )
@@ -54,7 +55,6 @@ BlurbText = "Okay, okay, I’ll get to the point. Long story short, I may have s
 [node name="NoCloakDialogue" type="Node" parent="." index="4"]
 script = ExtResource( 2 )
 FirstOnly = false
-ForceStart = true
 
 [node name="Imp" parent="NoCloakDialogue" index="0" instance=ExtResource( 3 )]
 BlurbAudio = ExtResource( 12 )
@@ -64,6 +64,9 @@ BlurbText = "Look, I know you want to sit around ‘n’ talk instead of workin�
 position = Vector2( -4.00452, -60.0678 )
 texture = ExtResource( 13 )
 
-[node name="NotiSprite" parent="." index="6"]
-position = Vector2( 106.932, -148.679 )
+[node name="Node2D" parent="." index="6"]
+position = Vector2( -6.67419, -49.389 )
+
+[node name="NotiSprite" parent="Node2D" index="0"]
+position = Vector2( 121.933, -148.959 )
 texture = ExtResource( 14 )

@@ -17,10 +17,10 @@ BlurbText = "Oh. It’s you. What, you’re new here? Never stepped foot in this
 position = Vector2( -2.37, -75.0027 )
 texture = ExtResource( 6 )
 
-[node name="NotiSprite" parent="." index="4"]
-position = Vector2( 102.578, -142.023 )
+[node name="Node2D" parent="." index="4"]
+position = Vector2( -22.0248, -30.7013 )
 
-[node name="Dialogue2" type="Node" parent="." index="6"]
+[node name="Dialogue2" type="Node" parent="." index="5"]
 script = ExtResource( 5 )
 __meta__ = {
 "_editor_description_": ""

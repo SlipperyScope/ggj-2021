@@ -37,6 +37,5 @@ SpecificItem = false
 [node name="Sprite" parent="." index="3"]
 texture = ExtResource( 3 )
 
-[node name="NotiSprite" parent="." index="4"]
-position = Vector2( 121.933, -138.754 )
+[node name="NotiSprite" parent="Node2D" index="0"]
 texture = ExtResource( 2 )

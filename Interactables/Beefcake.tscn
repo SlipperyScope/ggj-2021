@@ -18,5 +18,5 @@ BlurbText = "Noted..."
 position = Vector2( -8.47571, -96.4111 )
 texture = ExtResource( 2 )
 
-[node name="NotiSprite" parent="." index="4"]
-position = Vector2( 101.802, -232.101 )
+[node name="Node2D" parent="." index="4"]
+position = Vector2( -14.8325, -81.5787 )

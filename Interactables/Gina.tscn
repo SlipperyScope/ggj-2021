@@ -18,10 +18,10 @@ NoAudio = true
 position = Vector2( 1.1225, -80.8173 )
 texture = ExtResource( 2 )
 
-[node name="NotiSprite" parent="." index="4"]
-position = Vector2( 99.105, -176.528 )
+[node name="Node2D" parent="." index="4"]
+position = Vector2( -26.939, -34.7963 )
 
-[node name="Dialogue2" type="Node" parent="." index="6"]
+[node name="Dialogue2" type="Node" parent="." index="5"]
 script = ExtResource( 5 )
 FirstOnly = false
 
