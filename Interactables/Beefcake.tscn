@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interactables/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Art/Characters/BeefCake.png" type="Texture" id=2]
+[ext_resource path="res://Blurbs/Beefcake.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Blurbs/Steve.tscn" type="PackedScene" id=4]
+
+[node name="Beefcake" instance=ExtResource( 1 )]
+
+[node name="Beefcake" parent="Dialogue" index="0" instance=ExtResource( 3 )]
+BlurbText = "I tried to tell that hero that there’s no way out. That his sheer hubris would be the end of him. But did he listen? No, of course not. Greed, and a boundless lust for the fame and wealth that would surely come with the defeat of the Final Boss got the best of him in the end. Now look where that self-indulgent pride has got him. He could have gorged himself for the rest of his life on the goods he’d pilfered up to this point, but he wanted more. Needed more. He envied all the Dungeon Master had, and planned to take it for himself. No, in the end, he was no hero. And even the wrath he felt for the death of his friends couldn’t give him the strength he needed to defeat this dungeon’s boss. He’d become so blinded by his quest that his spirit was weak, his wit clouded, and his love for his God and fellow man only a distant memory. Don’t fall into the same trap, young one. There’s still time for you. And if you’re feeling weak, the potion at the water’s heart will make you resistant to death. It won’t fortify you permanently, but it might give you the extra bit of strength you need to overcome a particularly fiery obstacle. Heed my words well, and you’ll be just fine in this place…"
+NoAudio = true
+
+[node name="Steve" parent="Dialogue" index="1" instance=ExtResource( 4 )]
+BlurbText = "Noted..."
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 2 )

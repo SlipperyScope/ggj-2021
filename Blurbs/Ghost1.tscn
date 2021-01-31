@@ -6,3 +6,4 @@
 [node name="Ghost1" type="Node"]
 script = ExtResource( 1 )
 FaceTexture = ExtResource( 2 )
+CharacterName = "Catmandu"
