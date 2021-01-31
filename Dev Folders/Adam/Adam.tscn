@@ -77,36 +77,18 @@ BlurbText = "Oops that's the boss"
 [node name="TriggerArea" parent="NPC2" index="2"]
 scale = Vector2( 1.3901, 1.3901 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1864.68, -3147.71 )
-
-[node name="Camera2D" parent="Player" index="0"]
-BackgroundSprite = NodePath("../../level1")
-
-[node name="Steve" parent="Player" index="4"]
-frame = 12
-
-[node name="HUD" parent="Player" index="6"]
-_InventoryPath = NodePath("../Inventory")
-
-[node name="Portrait" parent="Player/HUD" index="1"]
-visible = false
-
-[node name="DialogueBox" parent="Player/HUD" index="2"]
-visible = false
-
-[node name="Contents" parent="Player/HUD/DialogueBox" index="0"]
-margin_left = 615.0
-margin_top = 107.0
-margin_right = 1304.0
-
 [node name="DeadHero" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1176.11, -3118.08 )
 
 [node name="ItemPlaceSpot" parent="." instance=ExtResource( 10 )]
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -2075.11, -3114.97 )
+
+[node name="Camera2D" parent="Player" index="0"]
+position = Vector2( 0.00012207, 17.9514 )
+BackgroundSprite = NodePath("../../level1")
+
 [editable path="NPC2"]
 
 [editable path="Player"]
-
-[editable path="Player/HUD"]
