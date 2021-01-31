@@ -47,7 +47,7 @@ func _process(_delta):
 func _on_Area2D_area_entered(_area):
 	Interactor = _area.get_node("../")
 	if Interactor.has_node("Notification"):
-		Interactor.get_node("Notification").show()#do a little dance
+		Interactor.get_node("Notification").play("NotificationAnimation")
 
 	if Interactor.has_node("Dialogue"): 
 		var Dialogue = Interactor.get_node("Dialogue")
@@ -55,7 +55,7 @@ func _on_Area2D_area_entered(_area):
 
 func _on_Area2D_area_exited(_area):
 	if Interactor != null:
-		if Interactor.has_node("Notification"): Interactor.get_node("Notification").hide() #stop a little dance
+		if Interactor.has_node("Notification"): Interactor.get_node("Notification").stop()
 		Interactor = null
 
 func _start_dialogue():
@@ -73,19 +73,20 @@ func _add_items():
 
 	Interactor.get_node("TakeMe").queue_free()
 	Interactor.get_node("Notification").queue_free()
+	Interactor.get_node("NotiSprite").queue_free()
 
 func _place_item():
 	var destInventory = Interactor.get_node("Inventory")
 	if !destInventory.SpecificItem: return
 
 	var requiredType = destInventory.RequiredItemType
-	var _placed = false
 
 	for item in _Inventory.Items:
 		if item.ItemType == requiredType:
 			destInventory.AddItem(item, false)
 			_Inventory.RemoveItem(item, false)
 			destInventory.RequiredItemType = null
-			_placed = true
+			Interactor.get_node("Notification").queue_free()
+			Interactor.get_node("NotiSprite").queue_free()
+			break
 	
-	#do something with placed
