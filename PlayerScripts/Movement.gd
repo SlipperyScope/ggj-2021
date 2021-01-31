@@ -45,21 +45,38 @@ func _process(_delta):
 		elif Input.is_action_pressed('ui_accept') && !$Horn.playing: $Horn.play()
 
 func _on_Area2D_area_entered(_area):
-	Interactor = _area.get_node("../")
+	Interactor = _area.get_parent()
 	if Interactor.has_node("Notification"):
 		Interactor.get_node("Notification").play("NotificationAnimation")
 
 	if Interactor.InteractionType == Interactable.Interaction.Dialogue: 
-		var Dialogue = Interactor.get_node("Dialogue")
-		if Dialogue.ForceStart: _start_dialogue()
+		_start_dialogue(true)
 
 func _on_Area2D_area_exited(_area):
 	if Interactor != null:
 		if Interactor.has_node("Notification"): Interactor.get_node("Notification").stop()
 		Interactor = null
 
-func _start_dialogue():
-	HUD.StartDialogue(Interactor.get_node("Dialogue"))
+func _start_dialogue(forced := false):
+	if Interactor.has_node("NoCloakDialogue") && !_Inventory.HasItem(Item.ItemTypes.Cloak): return imp_dialogue()
+	for item in Interactor.get_children():
+		if "NoCloak" in item.name: continue
+		if item is Dialogue && (!forced || item.ForceStart):
+			if item.FirstOnly:
+				if !item.Heard: 
+					_actually_play_dialogue(item)
+					break
+			else: 
+				_actually_play_dialogue(item)
+				break
+
+func imp_dialogue():
+	var noCloak = Interactor.get_node("NoCloakDialogueFirst")
+	if noCloak.FirstOnly && !noCloak.Heard: _actually_play_dialogue(noCloak)
+	else: _actually_play_dialogue(Interactor.get_node("NoCloakDialogue"))
+
+func _actually_play_dialogue(playThis):
+	HUD.StartDialogue(playThis)
 	Steve.animation = "idle"
 	DialogueBoxWorking = true
 

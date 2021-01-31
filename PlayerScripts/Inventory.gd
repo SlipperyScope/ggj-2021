@@ -43,7 +43,7 @@ func RemoveItem(item, autoRemoveChild := true) -> bool:
 
 func HasItem(item):
 	for i in Items:
-		if i.ItemType == item || i == item:
+		if i.ItemType == item:
 			return true
 	
 	return false
