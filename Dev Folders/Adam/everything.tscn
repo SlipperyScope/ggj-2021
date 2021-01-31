@@ -23,7 +23,7 @@ position = Vector2( -3928.69, -3203.47 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="3"]
-frame = 9
+frame = 6
 
 [node name="NPC" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2750.57, -3178.04 )
@@ -49,6 +49,9 @@ position = Vector2( -1129.54, -2731.27 )
 
 [node name="ItemPlaceSpot" parent="." instance=ExtResource( 8 )]
 position = Vector2( -190.946, -1508.95 )
+
+[node name="Inventory" parent="ItemPlaceSpot" index="2"]
+RequiredItemType = 1
 
 [editable path="Player"]
 

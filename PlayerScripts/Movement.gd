@@ -58,6 +58,7 @@ func _on_Area2D_area_exited(_area):
 
 func _start_dialogue():
 	HUD.StartDialogue(Interactor.get_node("Dialogue"))
+	Steve.animation = "idle"
 	DialogueBoxWorking = true
 
 func _print_finished():
