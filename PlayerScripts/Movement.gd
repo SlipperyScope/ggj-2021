@@ -36,11 +36,13 @@ func _physics_process(_delta):
 		else: Steve.animation = "idle"
 
 func _process(_delta):
-	if (!DialogueBoxWorking && Interactor):
-		if Input.is_action_pressed('ui_accept'):
-			if Interactor.has_node("Dialogue"): _start_dialogue()
-			elif Interactor.has_node("TakeMe"): _add_items()
-			elif Interactor.has_node("Inventory"): _place_item()
+	if !DialogueBoxWorking:
+		if Interactor:
+			if Input.is_action_pressed('ui_accept'):
+				if Interactor.has_node("Dialogue"): _start_dialogue()
+				elif Interactor.has_node("TakeMe"): _add_items()
+				elif Interactor.has_node("Inventory"): _place_item()
+		elif Input.is_action_pressed('ui_accept') && !$Horn.playing: $Horn.play()
 
 func _on_Area2D_area_entered(_area):
 	Interactor = _area.get_node("../")

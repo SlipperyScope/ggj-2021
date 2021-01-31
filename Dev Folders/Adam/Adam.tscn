@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/VoiceLines/Boss_1_2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/DevArt/Beefcake2021.png" type="Texture" id=9]
 [ext_resource path="res://Game/ItemPlaceSpot.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/VoiceLines/Alpha_Horn_Sound.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/VoiceLines/Imp_1_4.wav" type="AudioStream" id=12]
 [ext_resource path="res://Game/NPC.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/VoiceLines/Imp_1_3.wav" type="AudioStream" id=18]
@@ -88,6 +89,13 @@ position = Vector2( -2075.11, -3114.97 )
 [node name="Camera2D" parent="Player" index="0"]
 position = Vector2( 0.00012207, 17.9514 )
 BackgroundSprite = NodePath("../../level1")
+
+[node name="Steve" parent="Player" index="3"]
+frame = 11
+
+[node name="Horn" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 11 )
+volume_db = -24.0
 
 [editable path="NPC2"]
 
