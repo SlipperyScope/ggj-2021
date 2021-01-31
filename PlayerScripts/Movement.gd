@@ -9,6 +9,17 @@ var velocity = Vector2()
 var Interactor
 var DialogueBoxWorking = false
 
+var ProgressBits = {
+	"Arrows": 2,
+	"Lava": 3,
+	"Pit": 4,
+	"Imp": 5,
+	"Web": 6,
+	"Spell": 7,
+	"MetalDetector": 8,
+	"MagicDetector": 9,
+}
+
 func _ready():
 	pass
 	HUD.connect("DialogueFinished", self, "_print_finished")
@@ -93,6 +104,8 @@ func _add_items():
 	Interactor.get_node("Notification").queue_free()
 	Interactor.get_node("NotiSprite").queue_free()
 
+	update_progression_triggers()
+
 func _place_item():
 	var destInventory = Interactor.get_node("Inventory")
 	if !destInventory.SpecificItem: return
@@ -109,3 +122,20 @@ func _place_item():
 			Interactor.get_node("NotiSprite").queue_free()
 			break
 
+	update_progression_triggers()
+
+func update_progression_triggers():
+	set_collision_layer_bit(ProgressBits["Arrows"], !_Inventory.HasItemType(Item.ItemTypes.Shield))
+	set_collision_layer_bit(ProgressBits["Lava"], !_Inventory.HasItemType(Item.ItemTypes.Potion))
+	set_collision_layer_bit(ProgressBits["Pit"], !_Inventory.HasItemType(Item.ItemTypes.Armor))
+	set_collision_layer_bit(ProgressBits["Imp"], !_Inventory.HasItemType(Item.ItemTypes.Cloak))
+	set_collision_layer_bit(ProgressBits["Web"], !_Inventory.HasItemType(Item.ItemTypes.Sword))
+	set_collision_layer_bit(ProgressBits["Spell"], !_Inventory.HasItemType(Item.ItemTypes.Wand))
+	set_collision_layer_bit(
+		ProgressBits["MetalDetector"],
+		_Inventory.HasAnyItemType([Item.ItemTypes.Shield, Item.ItemTypes.Sword, Item.ItemTypes.Loot])
+	)
+	set_collision_layer_bit(
+		ProgressBits["MagicDetector"],
+		_Inventory.HasAnyItemType([Item.ItemTypes.Cloak, Item.ItemTypes.Wand, Item.ItemTypes.Armor, Item.ItemTypes.Potion])
+	)

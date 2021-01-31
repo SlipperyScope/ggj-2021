@@ -6,13 +6,13 @@ signal InventoryItemRemoved(item)
 signal InventoryUpdated(items)
 
 export (bool) var SpecificItem = true
-export (Item.ItemTypes) var RequiredItemType 
+export (Item.ItemTypes) var RequiredItemType
 
 var Items = []
 
 func _ready():
 	call_deferred("_DeferReady")
-	
+
 func _DeferReady():
 	for child in get_children():
 		if child is Item:
@@ -45,7 +45,16 @@ func HasItem(item):
 	for i in Items:
 		if i.ItemType == item:
 			return true
-	
+
+	return false
+
+func HasItemType(type):
+	return type in Item.ItemTypes
+
+func HasAnyItemType(types):
+	for t in types:
+		if HasItemType(t):
+			return true
 	return false
 
 func GetItem(type) -> Item:
