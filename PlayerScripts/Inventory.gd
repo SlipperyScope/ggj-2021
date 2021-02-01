@@ -48,12 +48,9 @@ func HasItem(item):
 
 	return false
 
-func HasItemType(type):
-	return type in Item.ItemTypes
-
 func HasAnyItemType(types):
 	for t in types:
-		if HasItemType(t):
+		if HasItem(t):
 			return true
 	return false
 

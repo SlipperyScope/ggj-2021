@@ -1,7 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0012.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0006.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0014.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0017.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0026.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0016.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0008.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0001.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0028.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0009.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0020.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0019.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0004.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0003.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0005.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0007.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0015.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0002.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0021.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0022.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0011.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0010.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0018.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0023.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0013.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0029.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0024.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0025.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0030.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Art/Sprites/ArrowTrap/ArrowTrap0027.png" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 47.9417, 105.855 )
+extents = Vector2( 67.7393, 105.855 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 15 ), ExtResource( 2 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 1 ), ExtResource( 25 ), ExtResource( 3 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 23 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 5 ), ExtResource( 30 ), ExtResource( 9 ), ExtResource( 26 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [node name="ArrowTrap" type="StaticBody2D"]
 collision_layer = 2147483652
@@ -10,3 +49,10 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -0.33374 )
 shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1.19052, -60.3212 )
+scale = Vector2( 0.581305, 0.738379 )
+frames = SubResource( 2 )
+frame = 15
+playing = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
@@ -18,6 +18,11 @@
 [ext_resource path="res://Game/ProgressTriggers/Web.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Game/ProgressTriggers/MetalDetector.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Game/ProgressTriggers/Spell.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game/ProgressTriggers/Bookcase.tscn" type="PackedScene" id=19]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 63.1912
+height = 133.579
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 98.0049
@@ -49,16 +54,27 @@ position = Vector2( 2363, -3134 )
 position = Vector2( 2090.18, -1173.18 )
 
 [node name="ArrowTrap" parent="." instance=ExtResource( 12 )]
-position = Vector2( -1551.12, -555.119 )
+position = Vector2( -1587.98, -550.169 )
 
 [node name="Web" parent="." instance=ExtResource( 16 )]
-position = Vector2( -1153.99, -3461.99 )
+position = Vector2( -951.912, 1363.43 )
+
+[node name="MetalDetector" parent="." instance=ExtResource( 17 )]
+position = Vector2( -3931.14, 1842.76 )
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( -16.8181, -23.5452 )
 
+[node name="Bookcase" parent="YSort" instance=ExtResource( 19 )]
+position = Vector2( -2178.55, -1215.26 )
+
 [node name="SwordStone" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -2195.63, -1282.06 )
+
+[node name="CollisionShape2D" parent="YSort/SwordStone/Area2D" index="0"]
+position = Vector2( -5.04565, 73.9985 )
+rotation = 1.57293
+shape = SubResource( 4 )
 
 [node name="Gina" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 1103.65, 3430.91 )
@@ -87,7 +103,7 @@ visible = false
 position = Vector2( -4.62384, -73.5784 )
 
 [node name="Steve" parent="YSort/Player" index="3"]
-frame = 7
+frame = 5
 
 [node name="Guard2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -336.151, 1386.71 )
@@ -111,7 +127,7 @@ position = Vector2( -2096.11, 836.475 )
 RequiredItem = 3
 
 [node name="ArmorStand" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -3876.61, -1116.74 )
+position = Vector2( -3879.13, -1099.16 )
 RequiredItem = 5
 
 [node name="Swank" parent="YSort" instance=ExtResource( 7 )]
@@ -137,8 +153,7 @@ position = Vector2( 128.289, -147.344 )
 [node name="Notification" parent="YSort/Imp/Node2D" index="1"]
 root_node = NodePath("..")
 
-[node name="MetalDetector" parent="." instance=ExtResource( 17 )]
-position = Vector2( -3931.14, 1842.76 )
+[editable path="YSort/SwordStone"]
 
 [editable path="YSort/Player"]
 

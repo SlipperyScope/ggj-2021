@@ -54,6 +54,9 @@ func _process(_delta):
 		elif Input.is_action_pressed('ui_accept') && !$Horn.playing: $Horn.play()
 
 func _on_Area2D_area_entered(_area):
+	if _area.get_parent() == null or (_area.get_parent() is Interactable) == false:
+		return
+
 	Interactor = _area.get_parent()
 	if Interactor.InteractionType == Interactable.Interaction.Pickup: _add_items()
 
@@ -126,12 +129,12 @@ func _place_item():
 	update_progression_triggers()
 
 func update_progression_triggers():
-	set_collision_layer_bit(ProgressBits["Arrows"], !_Inventory.HasItemType(Item.ItemTypes.Shield))
-	set_collision_layer_bit(ProgressBits["Lava"], !_Inventory.HasItemType(Item.ItemTypes.Potion))
-	set_collision_layer_bit(ProgressBits["Pit"], !_Inventory.HasItemType(Item.ItemTypes.Armor))
-	set_collision_layer_bit(ProgressBits["Imp"], !_Inventory.HasItemType(Item.ItemTypes.Cloak))
-	set_collision_layer_bit(ProgressBits["Web"], !_Inventory.HasItemType(Item.ItemTypes.Sword))
-	set_collision_layer_bit(ProgressBits["Spell"], !_Inventory.HasItemType(Item.ItemTypes.Wand))
+	set_collision_layer_bit(ProgressBits["Arrows"], !_Inventory.HasItem(Item.ItemTypes.Shield))
+	set_collision_layer_bit(ProgressBits["Lava"], !_Inventory.HasItem(Item.ItemTypes.Potion))
+	set_collision_layer_bit(ProgressBits["Pit"], !_Inventory.HasItem(Item.ItemTypes.Armor))
+	set_collision_layer_bit(ProgressBits["Imp"], !_Inventory.HasItem(Item.ItemTypes.Cloak))
+	set_collision_layer_bit(ProgressBits["Web"], !_Inventory.HasItem(Item.ItemTypes.Sword))
+	set_collision_layer_bit(ProgressBits["Spell"], !_Inventory.HasItem(Item.ItemTypes.Wand))
 	set_collision_layer_bit(
 		ProgressBits["MetalDetector"],
 		_Inventory.HasAnyItemType([Item.ItemTypes.Shield, Item.ItemTypes.Sword, Item.ItemTypes.Loot])

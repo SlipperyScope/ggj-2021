@@ -1,9 +1,11 @@
 extends Area2D
+class_name SpriteRemover
 
-export (NodePath) var Sprite
+export (NodePath) var Trigger
 export (Item.ItemTypes) var RequiredItem
-onready var _Sprite = get_node(Sprite)
+onready var _Trigger = get_node(Trigger)
 
-func on_SpriteRemover_body_entered(body):
+func _on_SpriteRemover_area_entered(body):
 	if body.get_parent()._Inventory.HasItem(RequiredItem):
-		_Sprite.visible = false
+	#	_Trigger.emit_signal("DoSomething")
+		_Trigger.visible = false
