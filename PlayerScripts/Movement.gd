@@ -21,7 +21,6 @@ var ProgressBits = {
 }
 
 func _ready():
-	pass
 	HUD.connect("DialogueFinished", self, "_print_finished")
 
 func get_input():
@@ -58,15 +57,15 @@ func _on_Area2D_area_entered(_area):
 	Interactor = _area.get_parent()
 	if Interactor.InteractionType == Interactable.Interaction.Pickup: _add_items()
 
-	if Interactor.has_node("Notification"):
-		Interactor.get_node("Notification").play("NotificationAnimation")
+	if Interactor.has_node("Node2D/Notification"):
+		Interactor.get_node("Node2D/Notification").play("NotificationAnimation")
 
 	if Interactor is Interactable and Interactor.InteractionType == Interactable.Interaction.Dialogue:
 		_start_dialogue(true)
 
 func _on_Area2D_area_exited(_area):
 	if Interactor != null:
-		if Interactor.has_node("Notification"): Interactor.get_node("Notification").stop()
+		if Interactor.has_node("Node2D/Notification"): Interactor.get_node("Node2D/Notification").stop()
 		Interactor = null
 
 func _start_dialogue(forced := false):
@@ -101,8 +100,8 @@ func _add_items():
 			_Inventory.AddItem(item, false)
 
 	Interactor.InteractionType = Interactable.Interaction.None
-	Interactor.get_node("Notification").queue_free()
-	Interactor.get_node("NotiSprite").queue_free()
+	Interactor.get_node("Node2D/Notification").queue_free()
+	Interactor.get_node("Node2D/NotiSprite").queue_free()
 
 	update_progression_triggers()
 
@@ -118,8 +117,8 @@ func _place_item():
 			_Inventory.RemoveItem(item, false)
 			destInventory.RequiredItemType = null
 			Interactor.InteractionType = Interactable.Interaction.None
-			Interactor.get_node("Notification").queue_free()
-			Interactor.get_node("NotiSprite").queue_free()
+			Interactor.get_node("Node2D/Notification").queue_free()
+			Interactor.get_node("Node2D/NotiSprite").queue_free()
 			break
 
 	update_progression_triggers()
