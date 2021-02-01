@@ -12,6 +12,7 @@
 [node name="Ghost2" parent="Dialogue" index="0" instance=ExtResource( 2 )]
 BlurbAudio = ExtResource( 3 )
 BlurbText = "Oh. It’s you. What, you’re new here? Never stepped foot in this dungeon before, you say? Never seen me in your life? Well, now you have. How’s it feel to be on death’s doorstep? Not long now before the hero - wait what? He’s dead? And all that time I spent over there trying to keep him from grabbing that invisibility cloak was for nothing? Ugh, leave me alone. Go bother Swank."
+CharacterName = "Gorgonolla"
 
 [node name="Sprite" parent="." index="3"]
 position = Vector2( -2.37, -75.0027 )
@@ -30,3 +31,4 @@ FirstOnly = false
 [node name="Ghost2" parent="Dialogue2" index="0" instance=ExtResource( 2 )]
 BlurbAudio = ExtResource( 4 )
 BlurbText = "Would you shut up, man?"
+CharacterName = "Gorgonolla"
