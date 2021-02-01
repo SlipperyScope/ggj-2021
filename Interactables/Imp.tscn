@@ -68,5 +68,5 @@ texture = ExtResource( 13 )
 position = Vector2( -6.67419, -49.389 )
 
 [node name="NotiSprite" parent="Node2D" index="0"]
-position = Vector2( 121.933, -148.959 )
+position = Vector2( 121.933, -111.322 )
 texture = ExtResource( 14 )
