@@ -26,6 +26,7 @@ FirstOnly = false
 script = ExtResource( 7 )
 BlurbAudio = ExtResource( 6 )
 BlurbText = "Though his sins were many, the world will still be a little darker  now that the hero has fallen. Who will take his place? Wait, what? You think I should become a hero? Sorry to disappoint, my friend… my fighting days are long behind me. "
+CharacterName = "Beefcake"
 
 [node name="Sprite" parent="." index="4"]
 position = Vector2( -8.47571, -96.4111 )

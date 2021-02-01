@@ -70,6 +70,8 @@ func _on_Area2D_area_exited(_area):
 
 func _start_dialogue(forced := false):
 	if Interactor.has_node("NoCloakDialogue") && !_Inventory.HasItem(Item.ItemTypes.Cloak): return imp_dialogue()
+	if !forced && Interactor.has_node("DialogueJobsDone") && _Inventory.Items.size() == 0: return _actually_play_dialogue(Interactor.get_node("DialogueJobsDone"))
+
 	for item in Interactor.get_children():
 		if "NoCloak" in item.name: continue
 		if item is Dialogue && (!forced || item.ForceStart):

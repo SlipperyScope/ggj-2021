@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interactables/HerosGhost.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactables/FallenHero.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 363.436, 10 )
@@ -17,7 +19,7 @@ position = Vector2( -3928.69, -3203.47 )
 BackgroundSprite = NodePath("../../level1")
 
 [node name="Steve" parent="Player" index="3"]
-frame = 10
+frame = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -25,5 +27,11 @@ frame = 10
 position = Vector2( 2123.94, -1168.33 )
 scale = Vector2( 1.39399, 29.4316 )
 shape = SubResource( 1 )
+
+[node name="HerosGhost" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2856.53, -3125.33 )
+
+[node name="FallenHero" parent="HerosGhost" instance=ExtResource( 14 )]
+position = Vector2( 564.957, 563.677 )
 
 [editable path="Player"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hero1_1_2.wav-70a4f57454dc238d339b1c402944cc2c.sample"
+
+[deps]
+
+source_file="res://Assets/VoiceLines/Hero1_1_2.wav"
+dest_files=[ "res://.import/Hero1_1_2.wav-70a4f57454dc238d339b1c402944cc2c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
