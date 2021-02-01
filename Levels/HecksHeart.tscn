@@ -34,7 +34,6 @@ height = 32.231
 radius = 258.229
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 830.693, 277.284 )
 
 [node name="Level" type="Node2D"]
 
@@ -107,11 +106,15 @@ shape = SubResource( 2 )
 visible = false
 position = Vector2( -4.62384, -73.5784 )
 
+[node name="Steve" parent="YSort/Player" index="3"]
+frame = 3
+
 [node name="Guard2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -336.151, 1386.71 )
 
 [node name="WandTable" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 3510.6, -3225.87 )
+RequiredItem = 2
 
 [node name="Fountain" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -208.599, -393.955 )
@@ -146,7 +149,7 @@ RequiredItem = 1
 position = Vector2( 3676.82, -601.54 )
 
 [node name="CollisionShape2D" parent="YSort/Imp/Area2D" index="0"]
-position = Vector2( 392.438, -42.8115 )
+scale = Vector2( 97.9192, 24.5286 )
 shape = SubResource( 4 )
 
 [node name="NotiSprite" parent="YSort/Imp/Node2D" index="0"]
