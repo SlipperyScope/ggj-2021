@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
@@ -20,7 +20,6 @@
 [ext_resource path="res://Game/ProgressTriggers/Spell.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Game/ProgressTriggers/Bookcase.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Game/ProgressTriggers/TollBooth.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Sounds/It Draws Nigh.wav" type="AudioStream" id=21]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 63.1912
@@ -34,6 +33,7 @@ height = 32.231
 radius = 258.229
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 891.018, 162.346 )
 
 [node name="Level" type="Node2D"]
 
@@ -107,7 +107,7 @@ visible = false
 position = Vector2( -4.62384, -73.5784 )
 
 [node name="Steve" parent="YSort/Player" index="3"]
-frame = 3
+frame = 4
 
 [node name="Guard2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -336.151, 1386.71 )
@@ -146,22 +146,11 @@ position = Vector2( 2126.82, 403.135 )
 RequiredItem = 1
 
 [node name="Imp" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 3676.82, -601.54 )
+position = Vector2( 3656.44, -627.388 )
 
 [node name="CollisionShape2D" parent="YSort/Imp/Area2D" index="0"]
-scale = Vector2( 97.9192, 24.5286 )
+position = Vector2( 422.855, 11.3264 )
 shape = SubResource( 4 )
-
-[node name="NotiSprite" parent="YSort/Imp/Node2D" index="0"]
-position = Vector2( 128.289, -147.344 )
-
-[node name="Notification" parent="YSort/Imp/Node2D" index="1"]
-root_node = NodePath("..")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 21 )
-volume_db = -27.01
-autoplay = true
 
 [editable path="YSort/SwordStone"]
 
