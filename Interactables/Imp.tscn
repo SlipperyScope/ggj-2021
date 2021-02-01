@@ -35,6 +35,7 @@ BlurbAudio = ExtResource( 8 )
 BlurbText = "Hey. Hey buddy. Hey, come ‘ere. Yeah, you, who did ya’ think I meant, the mouse? I mean, she’s cool and all, but listen. I’ve got a secret for ya’. No, don’t walk away, this is important! See, this whole dungeon, it’s all a show, right? Like, what, we’re supposed to believe that heroes just march in here day after day, just to die over and over again? And for what, a sack of loot? You gotta be kiddin’ me. Say, buddy, I think you’d best make like a tree and root out what this is all about. Ya’ see, the DM, they’re a no good weasel. No, not actually a weasel. Well, I haven’t met them, maybe they’re a weasel, but I digress. They’re a no good weasel, and they’re using you."
 
 [node name="SteveOkay" parent="NoCloakDialogueFirst" index="1" instance=ExtResource( 5 )]
+BlurbText = "I'mma head out..."
 
 [node name="Imp2" parent="NoCloakDialogueFirst" index="2" instance=ExtResource( 3 )]
 BlurbAudio = ExtResource( 6 )

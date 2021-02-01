@@ -110,7 +110,7 @@ visible = false
 position = Vector2( -4.62384, -73.5784 )
 
 [node name="Steve" parent="YSort/Player" index="3"]
-frame = 6
+frame = 11
 
 [node name="Guard2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -336.151, 1386.71 )

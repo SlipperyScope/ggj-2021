@@ -27,6 +27,10 @@ BlurbAudio = ExtResource( 6 )
 BlurbText = "Leave me alone, I must regain my strength. Heroes never die!"
 CharacterName = "Fallen Hero"
 
+[node name="Steve2" parent="Dialogue" index="3" instance=ExtResource( 4 )]
+BlurbText = "I thought you were supposed to be a dude..."
+DefaultTextSpeed = 11
+
 [node name="Dialogue2" type="Node" parent="." index="2"]
 script = ExtResource( 5 )
 FirstOnly = false
@@ -36,7 +40,7 @@ BlurbAudio = ExtResource( 10 )
 BlurbText = "Ho ho! Where do you think you’re going, Steve! If I couldn’t leave here with that loot, there’s no way I’m letting you do it, either. You’re here forever, my boney friend."
 
 [node name="Steve" parent="Dialogue2" index="1" instance=ExtResource( 4 )]
-BlurbText = "Finally..."
+BlurbText = "Great..."
 
 [node name="DialogueJobsDone" type="Node" parent="." index="3"]
 script = ExtResource( 5 )
