@@ -40,6 +40,7 @@ extents = Vector2( 891.018, 162.346 )
 [node name="Level" type="Node2D"]
 
 [node name="level1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -0.903015, 2.94099 )
 
 [node name="FallenHero" parent="." instance=ExtResource( 3 )]
 position = Vector2( -741.19, -2681.14 )
@@ -109,7 +110,7 @@ visible = false
 position = Vector2( -4.62384, -73.5784 )
 
 [node name="Steve" parent="YSort/Player" index="3"]
-frame = 21
+frame = 6
 
 [node name="Guard2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -336.151, 1386.71 )
