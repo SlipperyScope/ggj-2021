@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game/Levels/level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Interactables/Imp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Interactables/PunchLord.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Interactables/FallenHero.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 363.436, 10 )
@@ -19,11 +16,8 @@ position = Vector2( -3928.69, -3203.47 )
 [node name="Camera2D" parent="Player" index="0"]
 BackgroundSprite = NodePath("../../level1")
 
-[node name="PlayerArea" parent="Player" index="2"]
-visible = true
-
 [node name="Steve" parent="Player" index="3"]
-frame = 17
+frame = 10
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -31,14 +25,5 @@ frame = 17
 position = Vector2( 2123.94, -1168.33 )
 scale = Vector2( 1.39399, 29.4316 )
 shape = SubResource( 1 )
-
-[node name="Imp" parent="." instance=ExtResource( 4 )]
-position = Vector2( -2833.06, -4058.14 )
-
-[node name="PunchLord" parent="." instance=ExtResource( 13 )]
-position = Vector2( -2736.42, -2201.73 )
-
-[node name="FallenHero" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1084.31, -3074.19 )
 
 [editable path="Player"]
