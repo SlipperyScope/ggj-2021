@@ -106,8 +106,8 @@ func _add_items():
 			_Inventory.AddItem(item, false)
 
 	Interactor.InteractionType = Interactable.Interaction.None
-	Interactor.get_node("Node2D/Notification").queue_free()
-	Interactor.get_node("Node2D/NotiSprite").queue_free()
+	if Interactor.has_node("Node2D/Notification"): Interactor.get_node("Node2D/Notification").queue_free()
+	if Interactor.has_node("Node2D/NotiSprite"): Interactor.get_node("Node2D/NotiSprite").queue_free()
 
 	update_progression_triggers()
 
@@ -123,8 +123,8 @@ func _place_item():
 			_Inventory.RemoveItem(item, false)
 			destInventory.RequiredItemType = null
 			Interactor.InteractionType = Interactable.Interaction.None
-			Interactor.get_node("Node2D/Notification").queue_free()
-			Interactor.get_node("Node2D/NotiSprite").queue_free()
+			if Interactor.has_node("Node2D/Notification"): Interactor.get_node("Node2D/Notification").queue_free()
+			if Interactor.has_node("Node2D/NotiSprite"): Interactor.get_node("Node2D/NotiSprite").queue_free()
 			break
 
 	update_progression_triggers()
