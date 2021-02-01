@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 47.9417, 48.52 )
+extents = Vector2( 47.9417, 105.855 )
 
 [node name="ArrowTrap" type="StaticBody2D"]
 collision_layer = 2147483652

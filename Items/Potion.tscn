@@ -6,5 +6,5 @@
 [node name="Potion" type="Node"]
 script = ExtResource( 2 )
 ItemType = 6
-Tooltip = "Potion"
+Tooltip = "Mana Potion"
 Portrait = ExtResource( 1 )
