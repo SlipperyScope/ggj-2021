@@ -32,8 +32,8 @@ height = 32.231
 [sub_resource type="CircleShape2D" id=3]
 radius = 258.229
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 830.693, 277.284 )
+[sub_resource type="CircleShape2D" id=4]
+radius = 933.0
 
 [node name="Level" type="Node2D"]
 
@@ -145,17 +145,10 @@ position = Vector2( 2126.82, 403.135 )
 RequiredItem = 1
 
 [node name="Imp" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 3676.82, -601.54 )
+position = Vector2( 4021.72, -752.466 )
 
 [node name="CollisionShape2D" parent="YSort/Imp/Area2D" index="0"]
-position = Vector2( 392.438, -42.8115 )
 shape = SubResource( 4 )
-
-[node name="NotiSprite" parent="YSort/Imp/Node2D" index="0"]
-position = Vector2( 128.289, -147.344 )
-
-[node name="Notification" parent="YSort/Imp/Node2D" index="1"]
-root_node = NodePath("..")
 
 [editable path="YSort/SwordStone"]
 
