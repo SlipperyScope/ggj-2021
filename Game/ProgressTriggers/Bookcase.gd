@@ -11,5 +11,6 @@ func _ready():
 	$Area2D.connect("area_entered", self, "Slide")
 
 func Slide(area):
-	$AnimationPlayer.current_animation = "slideover"
-	$AnimationPlayer.play()
+	if area.get_parent().name == "Player":
+		$AnimationPlayer.current_animation = "slideover"
+		$AnimationPlayer.play()
