@@ -20,7 +20,7 @@ position = Vector2( 30.1946, -20.1298 )
 shape = SubResource( 1 )
 
 [node name="SpriteRemover2" parent="." instance=ExtResource( 2 )]
-Trigger = NodePath("../Sprite")
+Trigger = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteRemover2"]
 position = Vector2( 29.184, -17.3981 )

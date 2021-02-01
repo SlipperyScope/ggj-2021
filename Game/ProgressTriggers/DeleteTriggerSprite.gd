@@ -8,4 +8,5 @@ onready var _Trigger = get_node(Trigger)
 func _on_SpriteRemover_area_entered(body):
 	if body.get_parent()._Inventory.HasItem(RequiredItem):
 	#	_Trigger.emit_signal("DoSomething")
-		_Trigger.visible = false
+		#_Trigger.visible = false
+		_Trigger.queue_free()

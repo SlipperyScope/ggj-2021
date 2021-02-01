@@ -172,6 +172,15 @@ func _TagBlurb():
 func _UpdateButton():
 	_NavUp.disabled = _Dialogue.IsFirstBlurb
 	_NavDown.disabled = _Dialogue.IsLastBlurb || !_Blurb.Played
+	if _NavUp.disabled:
+		_NavUp.mouse_default_cursor_shape = 0
+	else:
+		_NavUp.mouse_default_cursor_shape = 2
+		
+	if _NavDown.disabled:
+		_NavDown.mouse_default_cursor_shape = 0
+	else:
+		_NavDown.mouse_default_cursor_shape = 2
 
 func _CalculatePrintSpeed(blurb):
 	if blurb.NoAudio:

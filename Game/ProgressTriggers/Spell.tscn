@@ -20,7 +20,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 
 [node name="SpriteRemover" parent="." instance=ExtResource( 2 )]
-Trigger = NodePath("../Sprite")
+Trigger = NodePath("..")
 RequiredItem = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteRemover"]
