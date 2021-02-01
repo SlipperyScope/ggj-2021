@@ -18,6 +18,7 @@ var ProgressBits = {
 	"Spell": 7,
 	"MetalDetector": 8,
 	"MagicDetector": 9,
+	"TollBooth": 10
 }
 
 func _ready():
@@ -135,6 +136,7 @@ func update_progression_triggers():
 	set_collision_layer_bit(ProgressBits["Imp"], !_Inventory.HasItem(Item.ItemTypes.Cloak))
 	set_collision_layer_bit(ProgressBits["Web"], !_Inventory.HasItem(Item.ItemTypes.Sword))
 	set_collision_layer_bit(ProgressBits["Spell"], !_Inventory.HasItem(Item.ItemTypes.Wand))
+	set_collision_layer_bit(ProgressBits["TollBooth"], !_Inventory.HasItem(Item.ItemTypes.Loot))
 	set_collision_layer_bit(
 		ProgressBits["MetalDetector"],
 		_Inventory.HasAnyItemType([Item.ItemTypes.Shield, Item.ItemTypes.Sword, Item.ItemTypes.Loot])
