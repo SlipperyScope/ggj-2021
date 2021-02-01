@@ -222,7 +222,7 @@ position = Vector2( -550.575, -447.231 )
 position = Vector2( -444.39, 23.6218 )
 
 [node name="Node2D" parent="." index="5"]
-position = Vector2( -7.13525, -183.138 )
+position = Vector2( -17.826, 16.4233 )
 
 [node name="NotiSprite" parent="Node2D" index="0"]
 position = Vector2( 121.933, -126.162 )
@@ -231,5 +231,5 @@ position = Vector2( 121.933, -126.162 )
 position = Vector2( 0, -41.747 )
 scale = Vector2( 0.363767, 0.363767 )
 frames = SubResource( 37 )
-frame = 11
+frame = 28
 playing = true
