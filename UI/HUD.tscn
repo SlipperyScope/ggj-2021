@@ -139,6 +139,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_colors/default_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 text = "sdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfssdfasdfasdfs"
+scroll_following = true
 
 [node name="Buttons" type="VBoxContainer" parent="DialogueBox/Contents"]
 margin_left = 1035.0
