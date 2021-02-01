@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/DevArt/Character.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Art/Portraits/BossDemon.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Assets/Art/Portraits/DialogueProceed.png" type="Texture" id=8]
 [ext_resource path="res://UI/TextPrinter.gd" type="Script" id=9]
 [ext_resource path="res://UI/Fonts/Impact_32.tres" type="DynamicFont" id=10]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="ImageTexture" id=2]
 
 [node name="HUD" type="Control"]
 anchor_left = 0.5
@@ -148,6 +152,7 @@ margin_bottom = 79.0
 rect_min_size = Vector2( 58, 79 )
 size_flags_horizontal = 4
 texture_normal = ExtResource( 5 )
+texture_disabled = SubResource( 1 )
 expand = true
 stretch_mode = 4
 
@@ -162,6 +167,7 @@ hint_tooltip = "Next blurb"
 size_flags_horizontal = 4
 size_flags_vertical = 2
 texture_normal = ExtResource( 6 )
+texture_disabled = SubResource( 2 )
 expand = true
 stretch_mode = 4
 
