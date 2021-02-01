@@ -7,4 +7,4 @@ func _ready():
 	connect("DoSomething", self, "Do")
 
 func Do():
-	$Sprite.visible = false
+	queue_free()
